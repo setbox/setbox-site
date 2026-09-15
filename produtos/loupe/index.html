@@ -613,28 +613,6 @@
           <a href="https://github.com/setbox/setbox-site/releases/latest/download/Loupe-macos-universal.dmg" class="font-medium hover:opacity-70 transition-opacity" style="color:#8B5CF6;">ou baixe o .dmg</a>
         </p>
 
-        <!-- Nota honesta sobre a ausência de Developer ID. Não documentar o
-             clique direito → Abrir: deixou de funcionar no macOS Sequoia. -->
-        <div class="border border-[#E5E5E5] rounded-xl mt-8" style="max-width:640px;margin:32px auto 0;background:#FAFAFA;padding:16px 20px;">
-          <p class="text-[12px] leading-[1.7] text-[#666666]">
-            <strong class="text-[#111111]">Por que instalar pelo terminal.</strong>
-            O Loupe não é assinado com Developer ID da Apple, que custa 99 USD por ano —
-            preferimos não repassar esse custo num app gratuito. O aviso do macOS é disparado
-            por uma marca que o <em>navegador</em> grava no arquivo baixado; o
-            <code class="font-mono">curl</code> não grava, e por isso a instalação acima abre
-            sem aviso nenhum.
-            <br><br>
-            Baixando o <code class="font-mono">.dmg</code> pelo navegador o macOS vai bloquear a
-            primeira abertura. Para liberar: tente abrir, feche o aviso, vá em
-            <strong class="text-[#111111]">Ajustes do Sistema &rsaquo; Privacidade e Segurança</strong>,
-            role até o fim e clique em <strong class="text-[#111111]">&ldquo;Abrir Assim Mesmo&rdquo;</strong>.
-            <br><br>
-            O download vem do domínio da Setbox por HTTPS, e o script confere o
-            <a href="https://github.com/setbox/setbox-site/releases/latest/download/SHA256SUMS" class="font-medium hover:opacity-70 transition-opacity" style="color:#8B5CF6;">SHA-256 publicado</a>
-            antes de instalar qualquer coisa.
-          </p>
-        </div>
-
         <!-- Windows e Linux: o código já é multiplataforma, falta só compilar e
              testar nessas plataformas. Inertes até existir binário. -->
         <div class="download-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:640px;margin:32px auto 0;">
