@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Instalador do Loupe — https://setbox.com.br/produtos/loupe/
+# Instalador do Loupe - https://setbox.com.br/produtos/loupe/
 #
 #   curl -fsSL https://setbox.com.br/produtos/loupe/instalar.sh | bash
 #
@@ -8,7 +8,7 @@
 #
 # O Loupe não é assinado com Developer ID da Apple. O Gatekeeper só inspeciona
 # arquivos marcados com o atributo com.apple.quarantine, e quem grava esse
-# atributo é o navegador que fez o download — não o macOS. O curl não grava.
+# atributo é o navegador que fez o download - não o macOS. O curl não grava.
 # Instalando por aqui, o app abre normalmente; baixando o DMG pelo navegador, o
 # macOS bloqueia a primeira abertura e é preciso liberar em Ajustes do Sistema.
 #

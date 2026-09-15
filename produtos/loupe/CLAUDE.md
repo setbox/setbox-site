@@ -70,12 +70,12 @@ Página precisa de `meta[description]`, `link[canonical]`, Open Graph (`og:type/
 Este é o diretório final: o conteúdo é servido direto daqui, em
 `setbox.com.br/produtos/loupe/`, pelo GitHub Pages deste repositório
 (`setbox/setbox-site`, CNAME `setbox.com.br`). **Não há diretório fonte
-separado nem passo de build ou rsync** — editar aqui, commitar, pushar.
+separado nem passo de build ou rsync** - editar aqui, commitar, pushar.
 
 Até setembro de 2026 existia um `produtos/loupe/loupe-site/` fora deste
 repositório, copiado para cá por rsync. Foi removido: as duas cópias divergiam,
 e arte não usada voltava ao deploy a cada sincronização. O ReDoc nunca teve essa
-separação — esta página agora segue a mesma convenção.
+separação - esta página agora segue a mesma convenção.
 
 Este `CLAUDE.md` não é servido: o `_config.yml` na raiz do repositório exclui
 todo `CLAUDE.md`, `DESIGN.md` e `README.md` da publicação.
@@ -84,7 +84,7 @@ todo `CLAUDE.md`, `DESIGN.md` e `README.md` da publicação.
 
 O `instalar.sh` ao lado é servido em `setbox.com.br/produtos/loupe/instalar.sh`
 e é o que o comando divulgado na página baixa. **Ele é gerado no repositório do
-app** (`loupe-app/instalar.sh`) — edite lá e copie para cá, nunca o contrário.
+app** (`loupe-app/instalar.sh`) - edite lá e copie para cá, nunca o contrário.
 
 Os binários do Loupe não ficam neste repositório como arquivos versionados: vão
 para os **Releases** dele, porque asset de release não entra no histórico do git

@@ -12,7 +12,7 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
-  # Documentação interna — versionada, nunca servida.
+  # Documentação interna - versionada, nunca servida.
   - CLAUDE.md
   - DESIGN.md
   - README.md

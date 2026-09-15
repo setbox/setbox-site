@@ -28,7 +28,7 @@ Logo + address block on the left. Single "Empresa" column on the right (Empregos
 
 ## Image Rules
 
-- All `<img>` must have `width`, `height`, and `loading="lazy"` — except nav/footer logos (above fold)
+- All `<img>` must have `width`, `height`, and `loading="lazy"` - except nav/footer logos (above fold)
 - Logo cards (divisoes, produtos): the card container is a `<a>` link; image uses `group-hover:scale-105`
 - Client logos: grayscale, color on hover
 
