@@ -1,0 +1,21 @@
+# Configuração do Jekyll para o GitHub Pages.
+#
+# Existe por um motivo só: tirar a documentação interna do ar. Sem este arquivo,
+# o Jekyll publica todo .md do repositório, e CLAUDE.md, DESIGN.md e README.md
+# ficavam acessíveis em setbox.com.br/CLAUDE.md e companhia.
+#
+# Atenção: definir "exclude" SUBSTITUI a lista padrão do Jekyll
+# (Gemfile, Gemfile.lock, node_modules, vendor/...). Elas estão repetidas aqui
+# para o dia em que alguma delas aparecer no repositório.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  # Documentação interna — versionada, nunca servida.
+  - CLAUDE.md
+  - DESIGN.md
+  - README.md
+  - "**/CLAUDE.md"
+  - "**/DESIGN.md"
+  - "**/README.md"
