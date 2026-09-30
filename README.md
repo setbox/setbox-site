@@ -1,4 +1,4 @@
-# Setbox Sistemas Digitais
+# Setbox Serviços Digitais
 
 Site institucional de setbox.com.br.
 
@@ -30,7 +30,7 @@ npx serve .
 python3 -m http.server 8080
 ```
 
-Tailwind CSS e Inter font via CDN.
+Tailwind CSS e Manrope font via CDN.
 
 ## Documentação
 

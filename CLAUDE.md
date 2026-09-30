@@ -4,11 +4,11 @@ Guidance for Claude Code when working in this repository.
 
 ## Development
 
-No build step. Open any `.html` directly or serve with `npx serve .` / `python3 -m http.server 8080`. Tailwind CSS and Inter load via CDN.
+No build step. Open any `.html` directly or serve with `npx serve .` / `python3 -m http.server 8080`. Tailwind CSS and Manrope load via CDN.
 
 ## Architecture
 
-Multi-page static site for **Setbox Sistemas Digitais** (setbox.com.br). Pages: `index`, `servicos`, `sobre`, `divisoes`, `produtos`, `404`. All assets are self-contained in `assets/`. See `DESIGN.md` for component patterns.
+Multi-page static site for **Setbox Serviços Digitais** (setbox.com.br). Pages: `index`, `servicos`, `sobre`, `divisoes`, `produtos`, `404`. All assets are self-contained in `assets/`. See `DESIGN.md` for component patterns.
 
 ## Nav
 
@@ -16,7 +16,7 @@ Order: **Produtos | Serviços | Divisões | Sobre | Falar conosco**. Active page
 
 ## Footer
 
-Logo + address block on the left. Single "Empresa" column on the right (Empregos, Open Source, Byte Coração). No status dot. No products column.
+Logo + address block on the left (trade name "Setbox Serviços Digitais", address, legal name "SETBOX INFORMATICA LTDA" and CNPJ). Single "Empresa" column on the right (Empregos, Open Source, Byte Coração). No status dot. No products column.
 
 ## Content Rules
 

@@ -1,4 +1,4 @@
-# Design Reference - Setbox Sistemas Digitais
+# Design Reference - Setbox Serviços Digitais
 
 Análise visual baseada em https://entire.io (referência editorial), adaptada para identidade Setbox.
 
@@ -7,6 +7,8 @@ Análise visual baseada em https://entire.io (referência editorial), adaptada p
 ## Identidade Visual
 
 **Filosofia:** Editorial minimalista. Swiss/International typographic style. Quase zero ornamento, todo o trabalho estético é feito por tipografia, espaçamento e uso cirúrgico da cor de destaque.
+
+**Logo:** `assets/setbox-lockup.svg` (cubo em três tons + "Setbox" em Manrope SemiBold). Área de proteção: metade da altura do cubo em volta do logo. Regras completas da marca em `base_conhecimento/identidade-visual.md`.
 
 **Paleta:**
 
@@ -18,13 +20,13 @@ Análise visual baseada em https://entire.io (referência editorial), adaptada p
 | `text-muted` | `#555555-#888888` | Texto secundário, subtítulos |
 | `border` | `#E5E5E5` | Divisores, bordas de card |
 | `accent` | `#FB0D1C` | Vermelho Setbox: CTAs, bullets, labels, link ativo no nav |
-| `accent-hover` | `#C4000F` | Hover de botões e links vermelhos |
+| `accent-hover` | `#AF0914` | Hover de botões e links vermelhos |
 
 ---
 
 ## Tipografia
 
-**Font stack:** Inter via Google Fonts (optical size 14..32, pesos 300-800). Sem serifa em todos os elementos.
+**Font stack:** Manrope via Google Fonts (pesos 300-800), fonte oficial da marca. Sem serifa em todos os elementos.
 
 ### Escala
 
@@ -80,7 +82,7 @@ Análise visual baseada em https://entire.io (referência editorial), adaptada p
 - Sticky top, `bg-[#FAFAFA]`, `border-b border-[#E5E5E5]`, `h-14`, `z-50`
 - Links: `text-sm text-[#111111] hover:opacity-50 transition-opacity`, `hidden md:block`
 - Link ativo: `text-[#FB0D1C] font-medium` (sem hover)
-- Botão "Falar conosco": `bg-[#FB0D1C] text-white px-4 py-1.5 rounded-[6px] hover:bg-[#C4000F]`
+- Botão "Falar conosco": `bg-[#FB0D1C] text-white px-4 py-1.5 rounded-[6px] hover:bg-[#AF0914]`
 
 ### Botão Primário
 
@@ -94,7 +96,7 @@ font-weight: 600;
 ```
 
 ```html
-<a href="mailto:contato@setbox.com.br" class="inline-block text-[14px] bg-[#FB0D1C] text-white px-6 py-3 rounded-[6px] hover:bg-[#C4000F] transition-colors font-semibold">CTA →</a>
+<a href="mailto:contato@setbox.com.br" class="inline-block text-[14px] bg-[#FB0D1C] text-white px-6 py-3 rounded-[6px] hover:bg-[#AF0914] transition-colors font-semibold">CTA →</a>
 ```
 
 ### Link Inline / "Acessar site"
@@ -136,13 +138,15 @@ Usado em divisoes.html e produtos.html. O card inteiro é um link; hover escala 
 
 ### Footer
 
-Logo + endereço à esquerda, coluna "Empresa" à direita. Sem status dot, sem coluna Produtos.
+Logo, nome fantasia (Setbox Serviços Digitais), endereço, razão social (SETBOX INFORMATICA LTDA) e CNPJ à esquerda, coluna "Empresa" à direita. Sem status dot, sem coluna Produtos.
 
 ```
 [Logo Setbox]              Empresa
 © 2026 Setbox              Empregos
-Rua João Bettega, 649      Open Source
-- Sala 3A, Curitiba / PR   Byte Coração
+Av. Carneiro Leão, 563     Open Source
+- Zona 01, Maringá / PR    Byte Coração
+SETBOX INFORMATICA LTDA
+CNPJ 08.889.601/0001-09
 ```
 
 - Fonte: 12px, `text-[#888888]` nos links, `text-[#BBBBBB]` no bloco esquerdo
@@ -158,9 +162,9 @@ Tipografia, layout, espaçamento e componentes são sempre os padrões Setbox ac
 
 | Marca | Accent | Hover | Contexto |
 |---|---|---|---|
-| Setbox (site) | `#FB0D1C` | `#C4000F` | Identidade principal. Todos os produtos próprios herdam. |
-| ReDoc | `#FB0D1C` | `#C4000F` | Produto Setbox. Herda vermelho. |
-| Integra Moda | `#FB0D1C` | `#C4000F` | Produto Setbox. Herda vermelho. |
+| Setbox (site) | `#FB0D1C` | `#AF0914` | Identidade principal. Todos os produtos próprios herdam. |
+| ReDoc | `#FB0D1C` | `#AF0914` | Produto Setbox. Herda vermelho. |
+| Integra Moda | `#FB0D1C` | `#AF0914` | Produto Setbox. Herda vermelho. |
 | Agroprocess | `#3FA110` | `#146E37` | Divisão agro. Paleta Sicredi (verde cooperativo). |
 | PJ Park | `#ff3f6e` | `#193044` | Divisão legaltech. Paleta própria (rosa + azul-marinho). |
 

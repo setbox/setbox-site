@@ -6,7 +6,7 @@
   <meta name="description" content="Loupe é um aplicativo desktop para ler, validar e navegar JSON, YAML, TOML, XML, CSV e mais 11 formatos. Árvore navegável, busca JSONPath, dobra sincronizada e 100% offline. Para macOS.">
   <link rel="canonical" href="https://setbox.com.br/produtos/loupe/">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Setbox Sistemas Digitais">
+  <meta property="og:site_name" content="Setbox Serviços Digitais">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:url" content="https://setbox.com.br/produtos/loupe/">
   <meta property="og:title" content="Loupe - Leitor e validador de JSON, YAML e mais, offline - Setbox">
@@ -25,9 +25,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script>
-    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter','system-ui','-apple-system','sans-serif'], mono: ['JetBrains Mono','ui-monospace','SFMono-Regular','Menlo','monospace'] } } } }
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Manrope','system-ui','-apple-system','sans-serif'], mono: ['JetBrains Mono','ui-monospace','SFMono-Regular','Menlo','monospace'] } } } }
   </script>
   <style>
     body { background-color: #FAFAFA; color: #111111; }
@@ -55,7 +55,7 @@
   <!-- Navbar -->
   <nav class="sticky top-0 z-50 bg-[#FAFAFA] border-b border-[#E5E5E5]">
     <div class="max-w-5xl mx-auto px-4 md:px-8 h-14 flex items-center justify-between">
-      <a href="https://setbox.com.br"><img src="assets/setbox-lateral.png" alt="Setbox" class="h-6 w-auto" width="1405" height="466"></a>
+      <a href="https://setbox.com.br"><img src="assets/setbox-lockup.svg" alt="Setbox" class="h-6 w-auto" width="1284" height="380"></a>
       <div class="flex items-center gap-4 md:gap-7">
         <a href="https://setbox.com.br/produtos/" class="hidden md:block text-sm font-medium" style="color:#FB0D1C;">Produtos</a>
         <a href="https://setbox.com.br/servicos.html" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Serviços</a>
@@ -68,7 +68,7 @@
             <rect y="15" width="20" height="2" rx="1" fill="#111111"/>
           </svg>
         </button>
-        <a href="#download" target="_blank" rel="noopener" class="text-sm text-white px-4 py-1.5 rounded-[6px] transition-colors font-medium whitespace-nowrap" style="background:#FB0D1C;" onmouseover="this.style.background='#C4000F'" onmouseout="this.style.background='#FB0D1C'">Baixar →</a>
+        <a href="#download" target="_blank" rel="noopener" class="text-sm text-white px-4 py-1.5 rounded-[6px] transition-colors font-medium whitespace-nowrap" style="background:#FB0D1C;" onmouseover="this.style.background='#AF0914'" onmouseout="this.style.background='#FB0D1C'">Baixar →</a>
       </div>
     </div>
     <!-- Mobile menu -->
@@ -97,7 +97,7 @@
               JSON, YAML, TOML, XML, CSV, logs e mais 10 formatos na mesma janela. Cole, abra ou edite: Loupe valida, aponta o erro na linha exata e mostra o documento inteiro em árvore navegável. Nativo, leve e 100% offline.
             </p>
             <div class="hero-cta" style="display:flex;flex-wrap:wrap;gap:12px;">
-              <a href="#download" target="_blank" rel="noopener" class="inline-block text-[14px] text-white px-6 py-3 rounded-[6px] font-semibold transition-colors" style="background:#FB0D1C;" onmouseover="this.style.background='#C4000F'" onmouseout="this.style.background='#FB0D1C'">Baixar Loupe →</a>
+              <a href="#download" target="_blank" rel="noopener" class="inline-block text-[14px] text-white px-6 py-3 rounded-[6px] font-semibold transition-colors" style="background:#FB0D1C;" onmouseover="this.style.background='#AF0914'" onmouseout="this.style.background='#FB0D1C'">Baixar Loupe →</a>
               <a href="#funcionalidades" class="inline-block text-[14px] text-[#111111] px-6 py-3 rounded-[6px] border border-[#E5E5E5] hover:bg-[#F7F7F7] transition-colors font-medium">Ver funcionalidades</a>
             </div>
             <p class="text-[12px] text-[#888888] mt-4">Gratuito · Sem cadastro · Nenhum dado sai da sua máquina</p>
@@ -595,7 +595,7 @@
           </div>
           <div style="display:flex;align-items:center;gap:12px;padding:16px;">
             <code id="cmd-instalar" class="font-mono text-[13px] text-[#111111]" style="flex:1;min-width:0;overflow-x:auto;white-space:nowrap;">curl -fsSL https://setbox.com.br/produtos/loupe/instalar.sh | bash</code>
-            <button type="button" onclick="copiarComando(this)" class="text-[12px] text-white px-3 py-1.5 rounded-[6px] font-medium transition-colors" style="background:#FB0D1C;flex-shrink:0;" onmouseover="this.style.background='#C4000F'" onmouseout="this.style.background='#FB0D1C'">Copiar</button>
+            <button type="button" onclick="copiarComando(this)" class="text-[12px] text-white px-3 py-1.5 rounded-[6px] font-medium transition-colors" style="background:#FB0D1C;flex-shrink:0;" onmouseover="this.style.background='#AF0914'" onmouseout="this.style.background='#FB0D1C'">Copiar</button>
           </div>
         </div>
 
@@ -646,7 +646,7 @@
         <a href="#download" target="_blank" rel="noopener"
            class="inline-block text-[14px] font-semibold px-6 py-3 rounded-[6px] transition-colors text-white"
            style="background:#FB0D1C;"
-           onmouseover="this.style.background='#C4000F'" onmouseout="this.style.background='#FB0D1C'">
+           onmouseover="this.style.background='#AF0914'" onmouseout="this.style.background='#FB0D1C'">
           Baixar Loupe →
         </a>
         <div class="mt-4">
@@ -661,9 +661,10 @@
     <div class="max-w-5xl mx-auto px-4 md:px-8 py-10 md:py-14">
       <div class="flex flex-col md:flex-row gap-16">
         <div>
-          <a href="https://setbox.com.br" target="_blank"><img src="assets/setbox-lateral.png" alt="Setbox" class="h-6 w-auto mb-5" width="1405" height="466"></a>
+          <a href="https://setbox.com.br" target="_blank"><img src="assets/setbox-lockup.svg" alt="Setbox" class="h-6 w-auto mb-5" width="1284" height="380"></a>
           <p class="text-[12px] text-[#BBBBBB] mb-1">© 2026 Setbox Serviços Digitais</p>
-          <p class="text-[12px] text-[#BBBBBB]">Rua João Bettega, 649 - Sala 3A<br>Curitiba / PR</p>
+          <p class="text-[12px] text-[#BBBBBB] mb-1">Av. Carneiro Leão, 563 - Zona 01<br>Maringá / PR</p>
+          <p class="text-[12px] text-[#BBBBBB]">SETBOX INFORMATICA LTDA<br>CNPJ 08.889.601/0001-09</p>
         </div>
         <div>
           <p class="text-[11px] font-semibold tracking-wide uppercase mb-3" style="color:#888888;">Loupe</p>

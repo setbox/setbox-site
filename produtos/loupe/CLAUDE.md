@@ -4,19 +4,19 @@ Guidance for Claude Code when working in this repository.
 
 ## Development
 
-No build step. Open `index.html` directly or serve with `npx serve .` / `python3 -m http.server 8080`. Tailwind CSS, Inter e JetBrains Mono carregam via CDN.
+No build step. Open `index.html` directly or serve with `npx serve .` / `python3 -m http.server 8080`. Tailwind CSS, Manrope e JetBrains Mono carregam via CDN.
 
 ## Architecture
 
 Landing page estática de página única do **Loupe** (`setbox.com.br/produtos/loupe/`), app desktop Tauri para ler, validar e navegar 16 formatos de dado estruturado (JSON, YAML, TOML, XML/plist, CSV, INI, logfmt, Prometheus, `.env`, JWT, base64 e saída de console de Elixir, Python, Ruby e PHP). Código do app em `../loupe-app` (repo `setbox/loupe-app`). Assets em `assets/`.
 
-Segue o padrão editorial Setbox descrito em `/Users/jackson/workspace/setbox/sites/setbox.github.io/DESIGN.md` (Inter, `max-w-5xl`, `#FAFAFA`, cards `border-[#E5E5E5] rounded-xl bg-white`), com paleta própria do Loupe.
+Segue o padrão editorial Setbox descrito em `/Users/jackson/workspace/setbox/sites/setbox.github.io/DESIGN.md` (Manrope, `max-w-5xl`, `#FAFAFA`, cards `border-[#E5E5E5] rounded-xl bg-white`), com paleta própria do Loupe.
 
 Referência estrutural mais próxima: `sites/setbox.github.io/produtos/redoc/index.html` (outro app desktop).
 
 ## Nav
 
-Navbar Setbox (o site vive sob `setbox.com.br/produtos/`), logo `setbox-lateral.png`. Ordem: `[logo Setbox]` | Produtos | Serviços | Divisões | Sobre | `[Baixar →]`.
+Navbar Setbox (o site vive sob `setbox.com.br/produtos/`), logo `setbox-lockup.svg`. Ordem: `[logo Setbox]` | Produtos | Serviços | Divisões | Sobre | `[Baixar →]`.
 
 Link ativo: "Produtos", `font-medium style="color:#8B5CF6;"`.
 
@@ -63,7 +63,7 @@ Cores do mockup: chave `#8B5CF6`, string `#0F766E`, número `#B45309`, meta `#88
 
 ## SEO
 
-Página precisa de `meta[description]`, `link[canonical]`, Open Graph (`og:type/site_name/locale/url/title/description/image`) e Twitter card. `og:site_name` = "Setbox Sistemas Digitais". OG image aponta para `https://setbox.com.br/assets/og-image.png`. Tailwind CDN com `<link rel="preload" as="script">` antes do `<script>`.
+Página precisa de `meta[description]`, `link[canonical]`, Open Graph (`og:type/site_name/locale/url/title/description/image`) e Twitter card. `og:site_name` = "Setbox Serviços Digitais". OG image aponta para `https://setbox.com.br/assets/og-image.png`. Tailwind CDN com `<link rel="preload" as="script">` antes do `<script>`.
 
 ## Onde este diretório vive
 
