@@ -19,8 +19,10 @@ Análise visual baseada em https://entire.io (referência editorial), adaptada p
 | `text` | `#111111` | Texto primário |
 | `text-muted` | `#555555-#888888` | Texto secundário, subtítulos |
 | `border` | `#E5E5E5` | Divisores, bordas de card |
-| `accent` | `#FB0D1C` | Vermelho Setbox: CTAs, bullets, labels, link ativo no nav |
-| `accent-hover` | `#AF0914` | Hover de botões e links vermelhos |
+| `brand` | `#FB0D1C` | Vermelho Setbox: logo, borda de card no hover, ícones, fundo de impacto. Nunca botão nem texto pequeno (4,06:1 com branco) |
+| `accent` | `#AF0914` | Vermelho 30p: botões, links, labels, bullets, link ativo no nav (7,31:1 com branco) |
+| `accent-hover` | `#8C0710` | Hover de botões vermelhos |
+| `accent-dark` | `#E10C19` | Botão sobre fundo escuro (#111111), hover `#D00B18` |
 
 ---
 
@@ -44,7 +46,7 @@ Análise visual baseada em https://entire.io (referência editorial), adaptada p
 ### Labels de seção
 
 ```html
-<p class="text-[11px] text-[#FB0D1C] font-semibold tracking-wide uppercase mb-3">Label</p>
+<p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-3">Label</p>
 ```
 
 ---
@@ -81,13 +83,13 @@ Análise visual baseada em https://entire.io (referência editorial), adaptada p
 
 - Sticky top, `bg-[#FAFAFA]`, `border-b border-[#E5E5E5]`, `h-14`, `z-50`
 - Links: `text-sm text-[#111111] hover:opacity-50 transition-opacity`, `hidden md:block`
-- Link ativo: `text-[#FB0D1C] font-medium` (sem hover)
-- Botão "Falar conosco": `bg-[#FB0D1C] text-white px-4 py-1.5 rounded-[6px] hover:bg-[#AF0914]`
+- Link ativo: `text-[#AF0914] font-medium` (sem hover)
+- Botão "Falar conosco": `bg-[#AF0914] text-white px-4 py-1.5 rounded-[6px] hover:bg-[#8C0710]`
 
 ### Botão Primário
 
 ```css
-background: #FB0D1C;
+background: #AF0914;
 color: #fff;
 border-radius: 6px;
 padding: 12px 24px;
@@ -96,13 +98,13 @@ font-weight: 600;
 ```
 
 ```html
-<a href="mailto:contato@setbox.com.br" class="inline-block text-[14px] bg-[#FB0D1C] text-white px-6 py-3 rounded-[6px] hover:bg-[#AF0914] transition-colors font-semibold">CTA →</a>
+<a href="mailto:contato@setbox.com.br" class="inline-block text-[14px] bg-[#AF0914] text-white px-6 py-3 rounded-[6px] hover:bg-[#8C0710] transition-colors font-semibold">CTA →</a>
 ```
 
 ### Link Inline / "Acessar site"
 
 ```html
-<a href="..." class="inline-flex items-center gap-2 text-[14px] text-[#FB0D1C] font-medium hover:opacity-70 transition-opacity">Acessar site →</a>
+<a href="..." class="inline-flex items-center gap-2 text-[14px] text-[#AF0914] font-medium hover:opacity-70 transition-opacity">Acessar site →</a>
 ```
 
 ### Card
@@ -126,7 +128,7 @@ Usado em divisoes.html e produtos.html. O card inteiro é um link; hover escala 
 ```html
 <ul class="space-y-3">
   <li class="flex gap-3 text-[14px] text-[#444444]">
-    <span class="text-[#FB0D1C] flex-shrink-0 font-bold">→</span>
+    <span class="text-[#AF0914] flex-shrink-0 font-bold">→</span>
     <span>Texto do item</span>
   </li>
 </ul>
@@ -162,9 +164,9 @@ Tipografia, layout, espaçamento e componentes são sempre os padrões Setbox ac
 
 | Marca | Accent | Hover | Contexto |
 |---|---|---|---|
-| Setbox (site) | `#FB0D1C` | `#AF0914` | Identidade principal. Todos os produtos próprios herdam. |
-| ReDoc | `#FB0D1C` | `#AF0914` | Produto Setbox. Herda vermelho. |
-| Integra Moda | `#FB0D1C` | `#AF0914` | Produto Setbox. Herda vermelho. |
+| Setbox (site) | `#AF0914` | `#8C0710` | Identidade principal. Todos os produtos próprios herdam. |
+| ReDoc | `#AF0914` | `#8C0710` | Produto Setbox. Herda vermelho. |
+| Integra Moda | `#AF0914` | `#8C0710` | Produto Setbox. Herda vermelho. |
 | Agroprocess | `#3FA110` | `#146E37` | Divisão agro. Paleta Sicredi (verde cooperativo). |
 | PJ Park | `#ff3f6e` | `#193044` | Divisão legaltech. Paleta própria (rosa + azul-marinho). |
 

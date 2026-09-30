@@ -12,7 +12,7 @@ Multi-page static site for **Setbox Serviços Digitais** (setbox.com.br). Pages:
 
 ## Nav
 
-Order: **Produtos | Serviços | Divisões | Sobre | Falar conosco**. Active page link: `text-[#FB0D1C] font-medium`. Inactive: `text-[#111111] hover:opacity-50 transition-opacity hidden md:block`.
+Order: **Produtos | Serviços | Divisões | Sobre | Falar conosco**. Active page link: `text-[#AF0914] font-medium`. Inactive: `text-[#111111] hover:opacity-50 transition-opacity hidden md:block`.
 
 ## Footer
 
