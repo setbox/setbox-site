@@ -47,10 +47,10 @@
     .logo-cliente:hover { filter: grayscale(0) opacity(1); }
     @media (min-width: 768px) { .logo-cliente { height: calc(var(--h) * 1px); } }
     .clientes-marquee { display: flex; -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
-    .clientes-track { flex-shrink: 0; min-width: max-content; animation: clientes-scroll 60s linear infinite; }
+    .clientes-track { flex-shrink: 0; min-width: max-content; animation: clientes-scroll 70s linear infinite; will-change: transform; }
     .clientes-marquee:hover .clientes-track { animation-play-state: paused; }
-    @keyframes clientes-scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
-    @media (prefers-reduced-motion: reduce) { .clientes-track { animation: none; } .clientes-track[aria-hidden] { display: none; } .clientes-marquee { justify-content: center; -webkit-mask-image: none; mask-image: none; } .clientes-marquee ul { width: auto; flex-wrap: wrap; justify-content: center; row-gap: 1.5rem; } }
+    @keyframes clientes-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .clientes-track { animation: none; } .clientes-track li[aria-hidden] { display: none; } .clientes-marquee { justify-content: center; -webkit-mask-image: none; mask-image: none; } .clientes-marquee ul { width: auto; flex-wrap: wrap; justify-content: center; row-gap: 1.5rem; } }
     #site-nav { --nav-p: 0; --nav-t: 0; --nav-fg: #FFFFFF; color: var(--nav-fg); border-bottom: 1px solid rgba(229, 229, 229, var(--nav-p)); }
     #site-nav .nav-layer-glass { background-color: rgba(17, 17, 17, 0.35); opacity: calc(1 - var(--nav-p)); }
     #site-nav .nav-layer-solid { background-color: #FAFAFA; opacity: var(--nav-p); }
@@ -132,46 +132,44 @@
         </p>
         <div class="clientes-marquee overflow-hidden">
           <ul class="clientes-track flex items-center w-max">
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/hsbc.webp" alt="HSBC" width="595" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 27"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/ciandt.webp" alt="CI&amp;T" width="489" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 34"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/venturus.webp" alt="Venturus" width="234" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 49"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/stefanini.webp" alt="Stefanini" width="990" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 24"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/brq.webp" alt="BRQ" width="282" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 44"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/superbid.webp" alt="Superbid" width="748" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 23"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/cinq.webp" alt="CINQ" width="517" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 31"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/junto-seguros.webp" alt="Junto Seguros" width="359" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 39"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/chaves-na-mao.webp" alt="Chaves na Mão" width="497" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 30"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/delivery-center.webp" alt="Delivery Center" width="331" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 41"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/greenn.webp" alt="Greenn" width="565" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 31"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/sbm.webp" alt="SBM Technology" width="336" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 41"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/adseleto.webp" alt="AdSeleto" width="855" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 25"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/insi.webp" alt="Insi" width="257" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 46"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/dextra.webp" alt="Dextra" width="288" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 44"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/previdenciarista.webp" alt="Previdenciarista" width="519" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 33"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/callma.webp" alt="Callma" width="140" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 51"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/colecao-moda.webp" alt="Coleção Moda" width="1630" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 20"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/consultprev.webp" alt="ConsultPrev" width="523" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 33"></li>
-          </ul>
-          <ul class="clientes-track flex items-center w-max" aria-hidden="true">
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/hsbc.webp" alt="" width="595" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 27"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/ciandt.webp" alt="" width="489" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 34"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/venturus.webp" alt="" width="234" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 49"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/stefanini.webp" alt="" width="990" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 24"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/brq.webp" alt="" width="282" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 44"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/superbid.webp" alt="" width="748" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 23"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/cinq.webp" alt="" width="517" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 31"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/junto-seguros.webp" alt="" width="359" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 39"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/chaves-na-mao.webp" alt="" width="497" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 30"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/delivery-center.webp" alt="" width="331" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 41"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/greenn.webp" alt="" width="565" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 31"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/sbm.webp" alt="" width="336" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 41"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/adseleto.webp" alt="" width="855" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 25"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/insi.webp" alt="" width="257" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 46"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/dextra.webp" alt="" width="288" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 44"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/previdenciarista.webp" alt="" width="519" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 33"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/callma.webp" alt="" width="140" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 51"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/colecao-moda.webp" alt="" width="1630" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 20"></li>
-            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/consultprev.webp" alt="" width="523" height="160" loading="lazy" class="logo-cliente w-auto" style="--h: 33"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/hsbc.webp" alt="HSBC" width="595" height="160" class="logo-cliente w-auto" style="--h: 27"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/ciandt.webp" alt="CI&amp;T" width="489" height="160" class="logo-cliente w-auto" style="--h: 34"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/venturus.webp" alt="Venturus" width="234" height="160" class="logo-cliente w-auto" style="--h: 49"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/stefanini.webp" alt="Stefanini" width="990" height="160" class="logo-cliente w-auto" style="--h: 24"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/brq.webp" alt="BRQ" width="282" height="160" class="logo-cliente w-auto" style="--h: 44"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/superbid.webp" alt="Superbid" width="748" height="160" class="logo-cliente w-auto" style="--h: 23"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/cinq.webp" alt="CINQ" width="517" height="160" class="logo-cliente w-auto" style="--h: 31"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/junto-seguros.webp" alt="Junto Seguros" width="359" height="160" class="logo-cliente w-auto" style="--h: 39"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/chaves-na-mao.webp" alt="Chaves na Mão" width="497" height="160" class="logo-cliente w-auto" style="--h: 30"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/delivery-center.webp" alt="Delivery Center" width="331" height="160" class="logo-cliente w-auto" style="--h: 41"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/greenn.webp" alt="Greenn" width="565" height="160" class="logo-cliente w-auto" style="--h: 31"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/sbm.webp" alt="SBM Technology" width="336" height="160" class="logo-cliente w-auto" style="--h: 41"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/adseleto.webp" alt="AdSeleto" width="855" height="160" class="logo-cliente w-auto" style="--h: 25"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/insi.webp" alt="Insi" width="257" height="160" class="logo-cliente w-auto" style="--h: 46"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/dextra.webp" alt="Dextra" width="288" height="160" class="logo-cliente w-auto" style="--h: 44"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/previdenciarista.webp" alt="Previdenciarista" width="519" height="160" class="logo-cliente w-auto" style="--h: 33"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/callma.webp" alt="Callma" width="140" height="160" class="logo-cliente w-auto" style="--h: 51"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/colecao-moda.webp" alt="Coleção Moda" width="1630" height="160" class="logo-cliente w-auto" style="--h: 20"></li>
+            <li class="shrink-0 px-6 md:px-9"><img src="assets/clientes/consultprev.webp" alt="ConsultPrev" width="523" height="160" class="logo-cliente w-auto" style="--h: 33"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/hsbc.webp" alt="" width="595" height="160" class="logo-cliente w-auto" style="--h: 27"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/ciandt.webp" alt="" width="489" height="160" class="logo-cliente w-auto" style="--h: 34"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/venturus.webp" alt="" width="234" height="160" class="logo-cliente w-auto" style="--h: 49"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/stefanini.webp" alt="" width="990" height="160" class="logo-cliente w-auto" style="--h: 24"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/brq.webp" alt="" width="282" height="160" class="logo-cliente w-auto" style="--h: 44"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/superbid.webp" alt="" width="748" height="160" class="logo-cliente w-auto" style="--h: 23"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/cinq.webp" alt="" width="517" height="160" class="logo-cliente w-auto" style="--h: 31"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/junto-seguros.webp" alt="" width="359" height="160" class="logo-cliente w-auto" style="--h: 39"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/chaves-na-mao.webp" alt="" width="497" height="160" class="logo-cliente w-auto" style="--h: 30"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/delivery-center.webp" alt="" width="331" height="160" class="logo-cliente w-auto" style="--h: 41"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/greenn.webp" alt="" width="565" height="160" class="logo-cliente w-auto" style="--h: 31"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/sbm.webp" alt="" width="336" height="160" class="logo-cliente w-auto" style="--h: 41"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/adseleto.webp" alt="" width="855" height="160" class="logo-cliente w-auto" style="--h: 25"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/insi.webp" alt="" width="257" height="160" class="logo-cliente w-auto" style="--h: 46"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/dextra.webp" alt="" width="288" height="160" class="logo-cliente w-auto" style="--h: 44"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/previdenciarista.webp" alt="" width="519" height="160" class="logo-cliente w-auto" style="--h: 33"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/callma.webp" alt="" width="140" height="160" class="logo-cliente w-auto" style="--h: 51"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/colecao-moda.webp" alt="" width="1630" height="160" class="logo-cliente w-auto" style="--h: 20"></li>
+            <li class="shrink-0 px-6 md:px-9" aria-hidden="true"><img src="assets/clientes/consultprev.webp" alt="" width="523" height="160" class="logo-cliente w-auto" style="--h: 33"></li>
           </ul>
         </div>
       </div>
