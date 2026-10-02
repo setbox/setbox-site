@@ -47,7 +47,7 @@
     .logo-cliente:hover { filter: grayscale(0) opacity(1); }
     @media (min-width: 768px) { .logo-cliente { height: calc(var(--h) * 1px); } }
     .clientes-marquee { display: flex; -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
-    .clientes-track { animation: clientes-scroll 60s linear infinite; }
+    .clientes-track { flex-shrink: 0; min-width: max-content; animation: clientes-scroll 60s linear infinite; }
     .clientes-marquee:hover .clientes-track { animation-play-state: paused; }
     @keyframes clientes-scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
     @media (prefers-reduced-motion: reduce) { .clientes-track { animation: none; } .clientes-track[aria-hidden] { display: none; } .clientes-marquee { justify-content: center; -webkit-mask-image: none; mask-image: none; } .clientes-marquee ul { width: auto; flex-wrap: wrap; justify-content: center; row-gap: 1.5rem; } }
