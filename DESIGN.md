@@ -8,7 +8,7 @@ Análise visual baseada em https://entire.io (referência editorial), adaptada p
 
 **Filosofia:** Editorial minimalista. Swiss/International typographic style. Quase zero ornamento, todo o trabalho estético é feito por tipografia, espaçamento e uso cirúrgico da cor de destaque.
 
-**Logo:** `assets/setbox-lockup.svg` (cubo em três tons + "Setbox" em Manrope SemiBold). Área de proteção: metade da altura do cubo em volta do logo. Regras completas da marca em `base_conhecimento/identidade-visual.md`.
+**Logo:** `assets/setbox-lockup.svg` (cubo em três tons + "Setbox" em Manrope SemiBold). Área de proteção: metade da altura do cubo em volta do logo. Regras completas da marca em `base_conhecimento/marca/identidade-visual.md`.
 
 **Paleta:**
 
