@@ -45,26 +45,34 @@
     body { background-color: #FAFAFA; color: #111111; }
     .logo-cliente { filter: grayscale(1) opacity(0.35); transition: filter 0.2s, opacity 0.2s; }
     .logo-cliente:hover { filter: grayscale(0) opacity(1); }
+    #site-nav { --nav-p: 0; --nav-t: 0; --nav-fg: #FFFFFF; color: var(--nav-fg); border-bottom: 1px solid rgba(229, 229, 229, var(--nav-p)); }
+    #site-nav .nav-layer-glass { background-color: rgba(17, 17, 17, 0.35); opacity: calc(1 - var(--nav-p)); }
+    #site-nav .nav-layer-solid { background-color: #FAFAFA; opacity: var(--nav-p); }
+    #site-nav .nav-logo-light { opacity: calc(1 - var(--nav-t)); }
+    #site-nav .nav-logo-dark { opacity: var(--nav-t); }
   </style>
 </head>
 <body class="font-sans antialiased">
 
   <!-- Nav -->
-  <nav class="sticky top-0 z-50 bg-[#FAFAFA] border-b border-[#E5E5E5]">
+  <nav id="site-nav" class="fixed top-0 inset-x-0 z-50 backdrop-blur-md">
+    <div class="nav-layer-glass absolute inset-0 -z-10" aria-hidden="true"></div>
+    <div class="nav-layer-solid absolute inset-0 -z-10" aria-hidden="true"></div>
     <div class="max-w-5xl mx-auto px-4 md:px-8 h-14 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2.5">
-        <img src="assets/setbox-lockup.svg" alt="Setbox" class="h-6 w-auto" width="1284" height="380">
+      <a href="index.html" class="relative flex items-center gap-2.5">
+        <img src="assets/setbox-lockup-escuro.svg" alt="Setbox" class="nav-logo-light h-6 w-auto" width="1284" height="380">
+        <img src="assets/setbox-lockup.svg" alt="" aria-hidden="true" class="nav-logo-dark absolute left-0 top-0 h-6 w-auto" width="1284" height="380">
       </a>
       <div class="flex items-center gap-4 md:gap-7">
-        <a href="produtos/" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Produtos</a>
-        <a href="servicos.html" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Serviços</a>
-        <a href="divisoes.html" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Divisões</a>
-        <a href="sobre.html" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Sobre</a>
+        <a href="produtos/" class="hidden md:block text-sm hover:opacity-50 transition-opacity">Produtos</a>
+        <a href="servicos.html" class="hidden md:block text-sm hover:opacity-50 transition-opacity">Serviços</a>
+        <a href="divisoes.html" class="hidden md:block text-sm hover:opacity-50 transition-opacity">Divisões</a>
+        <a href="sobre.html" class="hidden md:block text-sm hover:opacity-50 transition-opacity">Sobre</a>
         <button id="nav-toggle" class="md:hidden p-1" aria-label="Abrir menu" aria-expanded="false">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect y="3" width="20" height="2" rx="1" fill="#111111"/>
-            <rect y="9" width="20" height="2" rx="1" fill="#111111"/>
-            <rect y="15" width="20" height="2" rx="1" fill="#111111"/>
+            <rect y="3" width="20" height="2" rx="1" fill="currentColor"/>
+            <rect y="9" width="20" height="2" rx="1" fill="currentColor"/>
+            <rect y="15" width="20" height="2" rx="1" fill="currentColor"/>
           </svg>
         </button>
         <a href="mailto:contato@setbox.com.br" class="text-sm bg-[#AF0914] text-white px-4 py-1.5 rounded-[6px] hover:bg-[#8C0710] transition-colors font-medium whitespace-nowrap">Fale conosco</a>
@@ -84,20 +92,22 @@
   <main>
 
     <!-- HERO -->
-    <section class="bg-[#F7F7F7] border-b border-[#E8E8E8]">
-      <div class="max-w-4xl mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-14 md:pb-20 text-center">
-        <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-4">Desenvolvimento de software</p>
-        <h1 class="text-[38px] sm:text-[48px] md:text-[58px] font-extrabold leading-[1.08] tracking-[-0.03em] text-[#111111] mb-6">
+    <section class="relative overflow-hidden bg-[#111111] border-b border-[#E8E8E8] min-h-[100svh] pt-14 flex items-center">
+      <img src="assets/escritorio/escritorio-1920.webp" srcset="assets/escritorio/escritorio-768.webp 768w, assets/escritorio/escritorio-1280.webp 1280w, assets/escritorio/escritorio-1920.webp 1920w, assets/escritorio/escritorio-2752.webp 2752w" sizes="100vw" width="1920" height="1081" fetchpriority="high" alt="" class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0 bg-black/60"></div>
+      <div class="relative w-full max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24 text-center">
+        <p class="text-[11px] text-white/75 font-semibold tracking-wide uppercase mb-4">Desenvolvimento de software</p>
+        <h1 class="text-[38px] sm:text-[48px] md:text-[58px] font-extrabold leading-[1.08] tracking-[-0.03em] text-white mb-6">
           Acelere a transformação<br>digital dos seus projetos
         </h1>
-        <p class="text-[15px] md:text-[17px] leading-[1.7] text-[#555555] max-w-2xl mx-auto mb-10">
+        <p class="text-[15px] md:text-[17px] leading-[1.7] text-white/85 max-w-2xl mx-auto mb-10">
           Reduza o custo do software aumentando a qualidade e a produtividade. Há mais de 19 anos ajudando empresas a salvar e evoluir projetos de software.
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="mailto:contato@setbox.com.br" class="w-full sm:w-auto text-[14px] bg-[#AF0914] text-white px-6 py-3 rounded-[6px] hover:bg-[#8C0710] transition-colors font-semibold">
             Falar com a equipe →
           </a>
-          <a href="servicos.html#consultoria" class="text-[14px] text-[#888888] hover:text-[#111111] transition-colors font-medium">
+          <a href="servicos.html#consultoria" class="text-[14px] text-white/80 hover:text-white transition-colors font-medium">
             Ver serviços
           </a>
         </div>
@@ -218,32 +228,50 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-[#E5E5E5]">
-    <div class="max-w-5xl mx-auto px-4 md:px-8 py-10 md:py-14 flex flex-col md:flex-row gap-10 md:gap-16">
-      <div class="flex-shrink-0 md:min-w-[180px]">
-        <img src="assets/setbox-lockup.svg" alt="Setbox" class="h-6 w-auto mb-5" width="1284" height="380">
-        <p class="text-[12px] text-[#BBBBBB] mb-1">© 2026 Setbox Serviços Digitais</p>
-        <p class="text-[12px] text-[#BBBBBB] mb-1">Av. Carneiro Leão, 563 - Zona 01<br>Maringá / PR</p>
-        <p class="text-[12px] text-[#BBBBBB]">SETBOX INFORMATICA LTDA<br>CNPJ 08.889.601/0001-09</p>
-
+  <footer class="bg-[#111111]">
+    <div class="max-w-5xl mx-auto px-4 md:px-8 py-10 md:py-14">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+          <p class="text-[12px] font-semibold text-white mb-4">Empresa</p>
+          <ul class="space-y-2.5">
+            <li><a href="sobre.html#empregos" class="text-[12px] text-[#AAAAAA] hover:text-white transition-colors">Empregos</a></li>
+            <li><a href="https://github.com/setbox" target="_blank" class="text-[12px] text-[#AAAAAA] hover:text-white transition-colors">Open Source</a></li>
+            <li><a href="http://www.bytecoracao.ong.br" target="_blank" class="text-[12px] text-[#AAAAAA] hover:text-white transition-colors">Byte Coração</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="flex-1">
-        <p class="text-[12px] font-semibold text-[#111111] mb-4">Empresa</p>
-        <ul class="space-y-2.5">
-          <li><a href="sobre.html#empregos" class="text-[12px] text-[#888888] hover:text-[#111111] transition-colors">Empregos</a></li>
-          <li><a href="https://github.com/setbox" target="_blank" class="text-[12px] text-[#888888] hover:text-[#111111] transition-colors">Open Source</a></li>
-          <li><a href="http://www.bytecoracao.ong.br" target="_blank" class="text-[12px] text-[#888888] hover:text-[#111111] transition-colors">Byte Coração</a></li>
-        </ul>
+      <div class="mt-10 pt-6 border-t border-[#2A2A2A] flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <img src="assets/setbox-lockup-escuro.svg" alt="Setbox" class="h-6 w-auto" width="1284" height="380">
+        <p class="text-[12px] leading-[1.7] text-[#888888] md:text-right">© 2026 Setbox Serviços Digitais · SETBOX INFORMATICA LTDA · CNPJ 08.889.601/0001-09<br>Av. Carneiro Leão, 563 - Zona 01, Maringá / PR</p>
       </div>
     </div>
   </footer>
 
   <script>
-    document.getElementById('nav-toggle').addEventListener('click', function() {
+    (function() {
+      var nav = document.getElementById('site-nav');
       var menu = document.getElementById('nav-menu');
-      menu.classList.toggle('hidden');
-      this.setAttribute('aria-expanded', String(!menu.classList.contains('hidden')));
-    });
+      var hero = document.querySelector('main > section');
+      var range = 160;
+      function update() {
+        var end = hero.offsetHeight - nav.offsetHeight;
+        var p = Math.min(Math.max((window.scrollY - (end - range)) / range, 0), 1);
+        if (!menu.classList.contains('hidden')) p = 1;
+        var t = Math.min(Math.max((p - 0.4) / 0.2, 0), 1);
+        var c = Math.round(255 - (255 - 17) * t);
+        nav.style.setProperty('--nav-p', p.toFixed(3));
+        nav.style.setProperty('--nav-t', t.toFixed(3));
+        nav.style.setProperty('--nav-fg', 'rgb(' + c + ', ' + c + ', ' + c + ')');
+      }
+      document.getElementById('nav-toggle').addEventListener('click', function() {
+        menu.classList.toggle('hidden');
+        this.setAttribute('aria-expanded', String(!menu.classList.contains('hidden')));
+        update();
+      });
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
   </script>
 </body>
 </html>

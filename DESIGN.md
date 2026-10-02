@@ -82,6 +82,7 @@ Análise visual baseada em https://entire.io (referência editorial), adaptada p
 ```
 
 - Sticky top, `bg-[#FAFAFA]`, `border-b border-[#E5E5E5]`, `h-14`, `z-50`
+- Home (`index.html`): barra `fixed` sobre a foto do hero, com `backdrop-blur-md`. Enquanto a foto está atrás dela, fica translúcida (camada `rgba(17,17,17,0.35)`), com texto e ícone brancos e o logo `setbox-lockup-escuro.svg`. Nos últimos 160 px de rolagem antes do fim do hero, vira sólida (`#FAFAFA`, borda `#E5E5E5`, texto `#111111`, logo colorido); o texto troca de cor no meio dessa faixa. Volta ao estado translúcido ao rolar para cima. Menu do celular aberto força o estado sólido. Controle por `--nav-p` e `--nav-t` no script do fim da página. Hero com `min-h-[100svh] pt-14`. Demais páginas mantêm a barra `sticky` sólida
 - Links: `text-sm text-[#111111] hover:opacity-50 transition-opacity`, `hidden md:block`
 - Link ativo: `text-[#AF0914] font-medium` (sem hover)
 - Botão "Falar conosco": `bg-[#AF0914] text-white px-4 py-1.5 rounded-[6px] hover:bg-[#8C0710]`
@@ -140,20 +141,21 @@ Usado em divisoes.html e produtos.html. O card inteiro é um link; hover escala 
 
 ### Footer
 
-Logo, nome fantasia (Setbox Serviços Digitais), endereço, razão social (SETBOX INFORMATICA LTDA) e CNPJ à esquerda, coluna "Empresa" à direita. Sem status dot, sem coluna Produtos.
+Fundo grafite (`bg-[#111111]`) de ponta a ponta, em duas faixas, como no rodapé do PJ Park. Em cima, a área de links: coluna "Empresa" num grid de 4 colunas (2 no celular). Embaixo, separada por `border-t border-[#2A2A2A]`, o logo Setbox para fundo escuro (`assets/setbox-lockup-escuro.svg`: cubo em três tons, texto branco) à esquerda e os dados legais e o endereço à direita. Sem status dot, sem coluna Produtos.
 
 ```
-[Logo Setbox]              Empresa
-© 2026 Setbox              Empregos
-Av. Carneiro Leão, 563     Open Source
-- Zona 01, Maringá / PR    Byte Coração
-SETBOX INFORMATICA LTDA
-CNPJ 08.889.601/0001-09
+Empresa
+Empregos
+Open Source
+Byte Coração
+───────────────────────────────────────────────────────────────────────
+[Logo Setbox]      © 2026 Setbox Serviços Digitais · SETBOX INFORMATICA LTDA · CNPJ 08.889.601/0001-09
+                                                   Av. Carneiro Leão, 563 - Zona 01, Maringá / PR
 ```
 
-- Fonte: 12px, `text-[#888888]` nos links, `text-[#BBBBBB]` no bloco esquerdo
-- Cabeçalho de coluna: 12px, `font-semibold text-[#111111]`
-- Separador topo: `border-t border-[#E5E5E5]`
+- Links: grid `grid-cols-2 md:grid-cols-4 gap-8`
+- Faixa de baixo: `mt-10 pt-6 border-t border-[#2A2A2A] flex flex-col md:flex-row md:items-center md:justify-between gap-4`; texto alinhado à direita no desktop (`md:text-right`), empilhado embaixo do logo no celular
+- Fonte: 12px. Cabeçalho de coluna `font-semibold text-white`, links `text-[#AAAAAA] hover:text-white`, dados legais e endereço `text-[#888888]`
 - Padding: `py-10 md:py-14`
 
 ---
@@ -207,6 +209,7 @@ Bullets PJ Park: `<span class="font-bold flex-shrink-0" style="color:#ff3f6e;">�
 ## Tom Visual Geral
 
 - **Zero decoração:** sem gradientes, sem shadows, sem ilustrações, sem stock photos
+- **Exceção - escritório próprio:** foto ou render do escritório da própria Setbox é permitido só no **hero da home** (`index.html`), sem stock photos em nenhum caso: imagem de fundo ocupando a área visível (`min-h-[calc(100svh-56px)]`, `object-cover`), com camada `bg-black/60` por cima e texto em branco (título `text-white`, subtítulo `text-white/85`, rótulo `text-white/75`, link secundário `text-white/80 hover:text-white`). Botão primário mantém `#AF0914`. `alt=""` (decorativa), sem `loading="lazy"`, com `fetchpriority="high"`. Fora do hero da home, nada de foto
 - **Hierarquia por tamanho e peso:** cor de destaque usada com parcimônia (labels, bullets, CTAs)
 - **Densidade baixa:** uma ideia por bloco, muito espaço entre seções
 - **Confiança editorial:** conteúdo fala sozinho, design não grita

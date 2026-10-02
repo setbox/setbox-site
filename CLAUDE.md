@@ -12,11 +12,11 @@ Multi-page static site for **Setbox Serviços Digitais** (setbox.com.br). Pages:
 
 ## Nav
 
-Order: **Produtos | Serviços | Divisões | Sobre | Falar conosco**. Active page link: `text-[#AF0914] font-medium`. Inactive: `text-[#111111] hover:opacity-50 transition-opacity hidden md:block`.
+Order: **Produtos | Serviços | Divisões | Sobre | Falar conosco**. Active page link: `text-[#AF0914] font-medium`. Inactive: `text-[#111111] hover:opacity-50 transition-opacity hidden md:block`. On the home page only, the nav is `fixed` over the hero photo: translucent dark glass with white text and the dark-background logo while the photo is behind it, turning solid (current light style) over the last 160 px of scroll before the hero ends, and back on scroll up (script at the end of `index.html`, `--nav-p`/`--nav-t`). Other pages keep the solid sticky nav.
 
 ## Footer
 
-Logo + address block on the left (trade name "Setbox Serviços Digitais", address, legal name "SETBOX INFORMATICA LTDA" and CNPJ). Single "Empresa" column on the right (Empregos, Open Source, Byte Coração). No status dot. No products column.
+Graphite background (`bg-[#111111]`), two rows (same split as the PJ Park footer). Top: links area, a single "Empresa" column (Empregos, Open Source, Byte Coração) in a `grid-cols-2 md:grid-cols-4` grid, heading `text-white`, links `text-[#AAAAAA] hover:text-white`. Bottom, after a `border-t border-[#2A2A2A]`: dark-background logo `assets/setbox-lockup-escuro.svg` (three-tone cube, white text) on the left, legal line and address in `text-[#888888]` on the right ("© 2026 Setbox Serviços Digitais · SETBOX INFORMATICA LTDA · CNPJ" then the address), right-aligned on desktop. No status dot. No products column. `produtos/loupe` keeps its own footer.
 
 ## Content Rules
 
@@ -28,9 +28,10 @@ Logo + address block on the left (trade name "Setbox Serviços Digitais", addres
 
 ## Image Rules
 
-- All `<img>` must have `width`, `height`, and `loading="lazy"` - except nav/footer logos (above fold)
+- All `<img>` must have `width`, `height`, and `loading="lazy"` - except nav/footer logos and the home hero background (above fold, uses `fetchpriority="high"`)
 - Logo cards (divisoes, produtos): the card container is a `<a>` link; image uses `group-hover:scale-105`
 - Client logos: grayscale, color on hover
+- Photos: only of Setbox's own office, only as the home hero background (full viewport height, `object-cover`, `bg-black/60` overlay, white text, `alt=""`). Files: `assets/escritorio/escritorio-{768,1280,1920,2752}.webp`, always with `srcset`. No stock photos. See `DESIGN.md` (Tom Visual Geral)
 
 ## SEO
 
