@@ -30,7 +30,7 @@ Graphite background (`bg-[#111111]`), two rows (same split as the PJ Park footer
 
 - All `<img>` must have `width`, `height`, and `loading="lazy"` - except nav/footer logos and the home hero background (above fold, uses `fetchpriority="high"`)
 - Logo cards (divisoes, produtos): the card container is a `<a>` link; image uses `group-hover:scale-105`
-- Client logos: grayscale, color on hover
+- Client logos (home): WebP in `assets/clientes/`, transparent background, trimmed, 160 px tall. Shown in a single-row auto-scrolling marquee (`.clientes-marquee`, two copies of the list, the second `aria-hidden`, 60 s loop, paused on hover, static wrapped row with `prefers-reduced-motion`), grayscale at 45% opacity, color on hover, no links. Each logo's display height is set by `style="--h: N"` (px on desktop, 80% on mobile), balanced by aspect ratio so all look the same weight
 - Photos: only of Setbox's own office, only as the home hero background (full viewport height, `object-cover`, `bg-black/60` overlay, white text, `alt=""`). Files: `assets/escritorio/escritorio-{768,1280,1920,2752}.webp`, always with `srcset`. No stock photos. See `DESIGN.md` (Tom Visual Geral)
 
 ## SEO
