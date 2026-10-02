@@ -29,7 +29,8 @@ Graphite background (`bg-[#111111]`), two rows (same split as the PJ Park footer
 ## Image Rules
 
 - All `<img>` must have `width`, `height`, and `loading="lazy"` - except nav/footer logos, the client marquee logos (loaded eagerly so the loop never shows gaps) and the home hero background (above fold, uses `fetchpriority="high"`)
-- Logo cards (divisoes, produtos): the card container is a `<a>` link; image uses `group-hover:scale-105`
+- Logo cards (divisoes): the card container is a `<a>` link; image uses `group-hover:scale-105`
+- Products page (`produtos/index.html`): overview grid of icon cards linking to each product's section, then products grouped (Para empresas, Produtividade, Para desenvolvedores), each with a real product screen in `assets/produtos/` (WebP, inside a `bg-[#F2F2F2]` bordered frame), "Para quem é" box, 4 bullets and a primary button. No status labels. Planta ERP has no screen yet: green `#296E0B` panel with the white lockup until there is one
 - Client logos (home): WebP in `assets/clientes/`, transparent background, trimmed, 160 px tall. Shown in a single-row auto-scrolling marquee (`.clientes-marquee`, one track with the list twice, the second copy `aria-hidden`, translateX(-50%), 70 s loop, images not lazy, paused on hover, static wrapped row with `prefers-reduced-motion`), grayscale at 45% opacity, color on hover, no links. Each logo's display height is set by `style="--h: N"` (px on desktop, 80% on mobile), balanced by aspect ratio so all look the same weight
 - Photos: only of Setbox's own office, only as the home hero background (full viewport height, `object-cover`, `bg-black/60` overlay, white text, `alt=""`). Files: `assets/escritorio/escritorio-{768,1280,1920,2752}.webp`, always with `srcset`. No stock photos. See `DESIGN.md` (Tom Visual Geral)
 

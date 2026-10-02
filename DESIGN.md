@@ -116,7 +116,7 @@ font-weight: 600;
 
 ### Card de Logo (clicável, com hover)
 
-Usado em divisoes.html e produtos.html. O card inteiro é um link; hover escala a imagem.
+Usado em divisoes.html. O card inteiro é um link; hover escala a imagem.
 
 ```html
 <a href="https://exemplo.com" target="_blank" class="border border-[#E5E5E5] rounded-xl bg-white p-8 flex items-center justify-center group">
@@ -154,7 +154,7 @@ Byte Coração
 ```
 
 - Links: grid `grid-cols-2 md:grid-cols-4 gap-8`
-- Faixa de baixo: `mt-10 pt-6 border-t border-[#2A2A2A] flex flex-col md:flex-row md:items-center md:justify-between gap-4`; texto alinhado à direita no desktop (`md:text-right`), empilhado embaixo do logo no celular
+- Faixa de baixo: `mt-10 pt-6 border-t border-[#2A2A2A] flex flex-col md:flex-row md:items-center md:justify-between gap-4`; logo com `self-start md:self-auto` para ficar à esquerda no celular; texto alinhado à direita no desktop (`md:text-right`), empilhado embaixo do logo no celular
 - Fonte: 12px. Cabeçalho de coluna `font-semibold text-white`, links `text-[#AAAAAA] hover:text-white`, dados legais e endereço `text-[#888888]`
 - Padding: `py-10 md:py-14`
 
