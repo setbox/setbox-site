@@ -29,10 +29,13 @@ Graphite background (`bg-[#111111]`), two rows (same split as the PJ Park footer
 ## Image Rules
 
 - All `<img>` must have `width`, `height`, and `loading="lazy"` - except nav/footer logos, the client marquee logos (loaded eagerly so the loop never shows gaps) and the home hero background (above fold, uses `fetchpriority="high"`)
-- Logo cards (divisoes): the card container is a `<a>` link; image uses `group-hover:scale-105`
-- Products page (`produtos/index.html`): overview grid of icon cards linking to each product's section, then products grouped (Para empresas, Produtividade, Para desenvolvedores), each with a real product screen in `assets/produtos/` (WebP, inside a `bg-[#F2F2F2]` bordered frame), "Para quem é" box, 4 bullets and a primary button. No status labels. Planta ERP has no screen yet: green `#296E0B` panel with the white lockup until there is one
+- Products (`produtos/index.html`) and divisions (`divisoes.html`) pages share one layout: overview grid of icon cards linking to each product's section, then one block per item (products grouped as Para empresas, Produtividade, Para desenvolvedores; divisions in a single list), each with a real screen in `assets/produtos/` or `assets/divisoes/` (WebP, inside a `bg-[#F2F2F2]` bordered frame), "Para quem é" box, 4 bullets and a primary button. No status labels. PJ Park is a division, listed only in `divisoes.html`. Planta ERP has no screen yet: green `#296E0B` panel with the white lockup until there is one
 - Client logos (home): WebP in `assets/clientes/`, transparent background, trimmed, 160 px tall. Shown in a single-row auto-scrolling marquee (`.clientes-marquee`, one track with the list twice, the second copy `aria-hidden`, translateX(-50%), 70 s loop, images not lazy, paused on hover, static wrapped row with `prefers-reduced-motion`), grayscale at 45% opacity, color on hover, no links. Each logo's display height is set by `style="--h: N"` (px on desktop, 80% on mobile), balanced by aspect ratio so all look the same weight
 - Photos: only of Setbox's own office, only as the home hero background (full viewport height, `object-cover`, `bg-black/60` overlay, white text, `alt=""`). Files: `assets/escritorio/escritorio-{768,1280,1920,2752}.webp`, always with `srcset`. No stock photos. See `DESIGN.md` (Tom Visual Geral)
+
+## Map
+
+`sobre.html` ends with "Onde estamos": the same map block as the PJ Park contact page (Google Maps embed without API key, grayscale and frozen until "Clique para mover o mapa", 56 px street grid as fallback background, height `clamp(360px, 56vh, 540px)`, 320 px and card below the map at 860 px or less). Setbox style: address card as a standard white card with no shadow, pin `assets/pin-setbox.svg` (Setbox red `#FB0D1C` pin with the cube in white). CSS in the page `<style>`.
 
 ## SEO
 

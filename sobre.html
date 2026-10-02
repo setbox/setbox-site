@@ -33,7 +33,24 @@
   <script>
     tailwind.config = { theme: { extend: { fontFamily: { sans: ['Manrope','system-ui','-apple-system','sans-serif'] } } } }
   </script>
-  <style>body { background-color: #FAFAFA; color: #111111; }</style>
+  <style>
+    body { background-color: #FAFAFA; color: #111111; }
+    /* mapa: mesmo bloco da página de contato do PJ Park, no estilo Setbox */
+    .mapa-bloco { position: relative; isolation: isolate; background-color: #F7F7F7; background-image: linear-gradient(#E5E5E5 1px, transparent 1px), linear-gradient(90deg, #E5E5E5 1px, transparent 1px); background-size: 56px 56px; }
+    .mapa-moldura { position: relative; }
+    .mapa { display: block; width: 100%; height: clamp(360px, 56vh, 540px); border: 0; pointer-events: none; filter: grayscale(1) contrast(1.04) brightness(1.02); transition: filter .4s ease; }
+    .mapa-bloco[data-ativo="true"] .mapa { pointer-events: auto; filter: none; }
+    .mapa-alvo { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }
+    .mapa-alvo img { width: 52px; height: auto; transform: translateY(-26px); }
+    .mapa-bloco[data-ativo="true"] .mapa-alvo, .mapa-bloco[data-ativo="true"] .mapa-ativar { display: none; }
+    .mapa-cartao-area { position: absolute; inset: 0; display: flex; align-items: center; pointer-events: none; }
+    .mapa-cartao { pointer-events: auto; max-width: 340px; }
+    @media (max-width: 860px) {
+      .mapa { height: 320px; }
+      .mapa-cartao-area { position: static; display: block; padding-block: 24px 4px; }
+      .mapa-cartao { max-width: none; }
+    }
+  </style>
 </head>
 <body class="font-sans antialiased">
 
@@ -126,9 +143,32 @@
             <p class="text-[13px] font-semibold text-[#111111] mb-3">Faça parte da equipe</p>
             <p class="text-[14px] leading-[1.75] text-[#555555] mb-5">Nossa equipe é formada por excelentes profissionais, mas o constante crescimento indica que é hora de buscarmos novas mentes brilhantes.</p>
             <ul class="space-y-3">
-              <li class="flex gap-3 text-[13px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Acompanhe as vagas abertas no <a href="http://linkedin.com/company/setbox-sistemas-digitais" target="_blank" class="text-[#AF0914] hover:underline">LinkedIn</a></span></li>
+              <li class="flex gap-3 text-[13px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Acompanhe as vagas abertas no <a href="https://www.linkedin.com/company/setbox-servicos-digitais" target="_blank" rel="noopener" class="text-[#AF0914] hover:underline">LinkedIn</a></span></li>
               <li class="flex gap-3 text-[13px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Envie seu CV para <a href="mailto:rh@setbox.com.br" class="text-[#AF0914] hover:underline">rh@setbox.com.br</a> com o código da vaga no título</span></li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="onde-estamos" class="border-b border-[#E5E5E5]">
+      <div class="mapa-bloco" id="mapa-bloco" data-ativo="false">
+        <div class="mapa-moldura">
+          <iframe class="mapa" src="https://maps.google.com/maps?q=-23.4199434,-51.9491492&amp;z=17&amp;hl=pt-BR&amp;output=embed" title="Mapa com o endereço da Setbox em Maringá" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <div class="mapa-alvo" aria-hidden="true">
+            <img src="assets/pin-setbox.svg" alt="" width="64" height="64">
+          </div>
+          <button class="mapa-ativar absolute right-4 bottom-4 bg-white border border-[#E5E5E5] rounded-[6px] px-3.5 py-2 text-[12px] font-semibold text-[#111111] hover:border-[#AF0914] transition-colors" type="button" id="mapa-ativar">Clique para mover o mapa</button>
+        </div>
+        <div class="mapa-cartao-area">
+          <div class="max-w-5xl mx-auto px-4 md:px-8 w-full">
+            <div class="mapa-cartao border border-[#E5E5E5] rounded-xl bg-white p-7 flex flex-col gap-3">
+              <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase">Onde estamos</p>
+              <h2 class="text-[26px] font-bold leading-[1.2] tracking-tight text-[#111111]">Maringá, Paraná</h2>
+              <p class="text-[14px] leading-[1.7] text-[#555555]">Av. Carneiro Leão, 563 - Zona 01<br>Maringá / PR - 87014-010</p>
+              <p class="text-[14px] leading-[1.7] text-[#555555]">Setbox Serviços Digitais<br>CNPJ 08.889.601/0001-09</p>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Carneiro%20Le%C3%A3o%2C%20563%20-%20Zona%2001%2C%20Maring%C3%A1%20-%20PR%2C%2087014-010" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-[14px] text-[#AF0914] font-medium hover:opacity-70 transition-opacity">Abrir no Google Maps →</a>
+            </div>
           </div>
         </div>
       </div>
@@ -155,6 +195,11 @@
     </div>
   </footer>
 
+  <script>
+    document.getElementById('mapa-ativar').addEventListener('click', function() {
+      document.getElementById('mapa-bloco').setAttribute('data-ativo', 'true');
+    });
+  </script>
   <script>
     document.getElementById('nav-toggle').addEventListener('click', function() {
       var menu = document.getElementById('nav-menu');

@@ -116,7 +116,7 @@ font-weight: 600;
 
 ### Card de Logo (clicável, com hover)
 
-Usado em divisoes.html. O card inteiro é um link; hover escala a imagem.
+Não usado hoje (produtos e divisões passaram a usar telas reais, ver `CLAUDE.md`). O card inteiro é um link; hover escala a imagem.
 
 ```html
 <a href="https://exemplo.com" target="_blank" class="border border-[#E5E5E5] rounded-xl bg-white p-8 flex items-center justify-center group">
