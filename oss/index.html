@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projetos open source da Setbox: ExBanner, biblioteca Elixir que imprime um banner em arte ASCII quando a aplicação sobe e desenha texto com fontes FIGlet.">
+  <link rel="canonical" href="https://setbox.com.br/oss/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Setbox Serviços Digitais">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://setbox.com.br/oss/">
+  <meta property="og:title" content="Open Source - Setbox Serviços Digitais">
+  <meta property="og:description" content="Projetos open source da Setbox: ExBanner, biblioteca Elixir que imprime um banner em arte ASCII quando a aplicação sobe e desenha texto com fontes FIGlet.">
+  <meta property="og:image" content="https://setbox.com.br/assets/og-image.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Open Source - Setbox Serviços Digitais">
+  <meta name="twitter:description" content="Projetos open source da Setbox: ExBanner, biblioteca Elixir que imprime um banner em arte ASCII quando a aplicação sobe e desenha texto com fontes FIGlet.">
+  <title>Open Source - Setbox Serviços Digitais</title>
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../assets/site.webmanifest">
+  <meta name="theme-color" content="#FB0D1C">
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Manrope','system-ui','-apple-system','sans-serif'] } } } }
+  </script>
+  <style>body { background-color: #FAFAFA; color: #111111; }</style>
+</head>
+<body class="font-sans antialiased">
+
+  <nav class="sticky top-0 z-50 bg-[#FAFAFA] border-b border-[#E5E5E5]">
+    <div class="max-w-5xl mx-auto px-4 md:px-8 h-14 flex items-center justify-between">
+      <a href="../index.html"><img src="../assets/setbox-lockup.svg" alt="Setbox" class="h-6 w-auto" width="1284" height="380"></a>
+      <div class="flex items-center gap-4 md:gap-7">
+        <a href="../produtos/" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Produtos</a>
+        <a href="../servicos.html" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Serviços</a>
+        <a href="../divisoes.html" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Divisões</a>
+        <a href="../sobre.html" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Sobre</a>
+        <button id="nav-toggle" class="md:hidden p-1" aria-label="Abrir menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect y="3" width="20" height="2" rx="1" fill="#111111"/>
+            <rect y="9" width="20" height="2" rx="1" fill="#111111"/>
+            <rect y="15" width="20" height="2" rx="1" fill="#111111"/>
+          </svg>
+        </button>
+        <a href="mailto:contato@setbox.com.br" class="text-sm bg-[#AF0914] text-white px-4 py-1.5 rounded-[6px] hover:bg-[#8C0710] transition-colors font-medium whitespace-nowrap">Fale conosco</a>
+      </div>
+    </div>
+    <div id="nav-menu" class="hidden md:hidden border-t border-[#E5E5E5]">
+      <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col">
+        <a href="../produtos/" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Produtos</a>
+        <a href="../servicos.html" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Serviços</a>
+        <a href="../divisoes.html" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Divisões</a>
+        <a href="../sobre.html" class="text-sm text-[#111111] py-2.5 hover:opacity-50 transition-opacity">Sobre</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="bg-[#F7F7F7] border-b border-[#E8E8E8]">
+      <div class="max-w-5xl mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-14 md:pb-20">
+        <div class="max-w-3xl mx-auto text-center">
+          <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-4">Código aberto</p>
+          <h1 class="text-[38px] sm:text-[48px] md:text-[52px] font-extrabold leading-[1.08] tracking-[-0.03em] text-[#111111] mb-6">Open Source</h1>
+          <p class="text-[15px] md:text-[17px] leading-[1.7] text-[#555555]">Ferramentas que a Setbox criou para os próprios projetos e abriu para a comunidade, com código público e licença livre.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-24 border-b border-[#E5E5E5]">
+      <div class="max-w-5xl mx-auto px-4 md:px-8">
+        <div id="exbanner" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center scroll-mt-20">
+            <div class="border border-[#E5E5E5] rounded-xl bg-[#F2F2F2] p-3">
+              <img src="../assets/oss/exbanner.webp" alt="Página inicial do ExBanner com o nome desenhado em arte ASCII" class="w-full h-auto rounded-lg border border-[#E5E5E5]" width="1200" height="750" loading="lazy">
+            </div>
+          <div>
+            <img src="exbanner/assets/images/favicon.svg" alt="" class="w-10 h-10 mb-4" width="64" height="64" loading="lazy">
+            <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-2">Biblioteca · Elixir</p>
+            <h2 class="text-[26px] md:text-[30px] font-bold leading-[1.2] tracking-tight text-[#111111] mb-4">ExBanner</h2>
+            <p class="text-[15px] leading-[1.8] text-[#555555] mb-4">Imprime um banner em arte ASCII quando a aplicação sobe, com nome, versão e cores, e desenha qualquer texto com fontes FIGlet. Código aberto sob licença MIT.</p>
+            <p class="text-[14px] leading-[1.7] text-[#333333] bg-[#F2F2F2] rounded-lg px-4 py-2.5 mb-7"><span class="font-semibold">Para quem é:</span> Desenvolvedores Elixir que querem reconhecer a aplicação de relance no terminal e nos logs.</p>
+            <a href="exbanner/" class="inline-block text-[14px] bg-[#AF0914] text-white px-6 py-3 rounded-[6px] hover:bg-[#8C0710] transition-colors font-semibold">Conhecer o ExBanner →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#F7F7F7] border-b border-[#E5E5E5]">
+      <div class="max-w-3xl mx-auto px-4 md:px-8 py-16 md:py-24 text-center">
+        <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-3">Fale conosco</p>
+        <h2 class="text-[26px] md:text-[34px] font-bold leading-[1.2] tracking-tight text-[#111111] mb-5">Quer contribuir ou tem uma dúvida?</h2>
+        <p class="text-[15px] md:text-[16px] leading-[1.7] text-[#555555] mb-8 md:mb-10">Fale com a equipe Setbox sobre qualquer projeto desta página.</p>
+        <div class="flex flex-wrap items-center justify-center gap-5">
+          <a href="mailto:contato@setbox.com.br" class="inline-block text-[14px] bg-[#AF0914] text-white px-6 py-3 rounded-[6px] hover:bg-[#8C0710] transition-colors font-semibold">Falar com a equipe →</a>
+          <a href="../produtos/" class="text-[14px] text-[#888888] font-medium hover:text-[#111111] transition-colors">Ver produtos</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-[#111111]">
+    <div class="max-w-5xl mx-auto px-4 md:px-8 py-10 md:py-14">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+          <p class="text-[12px] font-semibold text-white mb-4">Empresa</p>
+          <ul class="space-y-2.5">
+            <li><a href="../sobre.html#empregos" class="text-[12px] text-[#AAAAAA] hover:text-white transition-colors">Empregos</a></li>
+            <li><a href="./" class="text-[12px] text-[#AAAAAA] hover:text-white transition-colors">Open Source</a></li>
+            <li><a href="http://www.bytecoracao.ong.br" target="_blank" class="text-[12px] text-[#AAAAAA] hover:text-white transition-colors">Byte Coração</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-10 pt-6 border-t border-[#2A2A2A] flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <img src="../assets/setbox-lockup-escuro.svg" alt="Setbox" class="h-6 w-auto self-start md:self-auto" width="1284" height="380">
+        <p class="text-[12px] leading-[1.7] text-[#888888] md:text-right">© 2026 Setbox Serviços Digitais · SETBOX INFORMATICA LTDA · CNPJ 08.889.601/0001-09<br>Av. Carneiro Leão, 563 - Zona 01, Maringá / PR</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('nav-toggle').addEventListener('click', function() {
+      var menu = document.getElementById('nav-menu');
+      menu.classList.toggle('hidden');
+      this.setAttribute('aria-expanded', String(!menu.classList.contains('hidden')));
+    });
+  </script>
+</body>
+</html>

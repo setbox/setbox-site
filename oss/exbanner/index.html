@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ExBanner - ASCII art banners for Elixir</title>
+  <meta name="description" content="ExBanner prints a startup banner from priv/banner.txt when your Elixir application boots and renders text with FIGlet fonts, matching figlet 2.2.5 byte for byte.">
+  <meta property="og:title" content="ExBanner - ASCII art banners for Elixir">
+  <meta property="og:description" content="Startup banners from priv/banner.txt and FIGlet text rendering for Elixir applications.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0f1115">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/application.css">
+</head>
+<body>
+  <header class="topbar">
+    <nav class="container nav">
+      <a class="brand" href="#top">exbanner</a>
+      <div class="nav-links">
+        <a href="#fonts">Fonts</a>
+        <a href="https://hexdocs.pm/exbanner">Docs</a>
+        <a href="https://github.com/setbox/exbanner-app">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <pre class="hero-art" aria-label="ExBanner">    ______     ____
+   / ____/  __/ __ )____ _____  ____  ___  _____
+  / __/ | |/_/ __  / __ `/ __ \/ __ \/ _ \/ ___/
+ / /____&gt;  &lt;/ /_/ / /_/ / / / / / / /  __/ /
+/_____/_/|_/_____/\__,_/_/ /_/_/ /_/\___/_/</pre>
+      <h1>ASCII art banners for Elixir applications</h1>
+      <p class="lead">Print a startup banner from <code>priv/banner.txt</code> when your application boots, and render any text with FIGlet fonts.</p>
+      <div class="actions">
+        <a class="button primary" href="https://hexdocs.pm/exbanner">Read the docs</a>
+        <a class="button" href="https://hex.pm/packages/exbanner">Hex package</a>
+        <a class="button" href="https://github.com/setbox/exbanner-app">Source code</a>
+      </div>
+      <div class="install" id="install">
+        <pre><code>{:exbanner, "~&gt; 0.3"}</code></pre>
+        <button class="copy" type="button" data-copy='{:exbanner, "~> 0.3"}'>Copy</button>
+      </div>
+      <p class="requirements">Elixir 1.15+ and OTP 25+. MIT licensed.</p>
+      <a class="endorsement" href="https://setbox.com.br" target="_blank" rel="noopener">A product by <picture><source srcset="assets/images/setbox-lockup-fundo-escuro.svg" media="(prefers-color-scheme: dark)"><img src="assets/images/setbox-lockup.svg" alt="Setbox" width="1284" height="380"></picture></a>
+    </section>
+
+    <section class="features container">
+      <article>
+        <h3>Same output as figlet</h3>
+        <p>Full width, fitting and horizontal smushing, checked byte for byte against <code>figlet</code> 2.2.5 in 329 of the 333 bundled fonts.</p>
+      </article>
+      <article>
+        <h3>Works in releases</h3>
+        <p>The banner lives in <code>priv/</code> and prints before your application logs, in <code>mix run</code>, <code>iex -S mix</code> and releases.</p>
+      </article>
+      <article>
+        <h3>333 fonts</h3>
+        <p>From the classic FIGlet distribution to hundreds of community fonts, each one credited to its author. Bring any other font with <code>:font_paths</code>.</p>
+      </article>
+      <article>
+        <h3>Safe by default</h3>
+        <p>No code evaluation, and no escape sequences from files, hostnames or environment variables reach your terminal or your logs.</p>
+      </article>
+    </section>
+
+    <section class="section container" id="startup">
+      <h2>Startup banner</h2>
+      <p>Tell ExBanner which application owns the banner. Without <code>:otp_app</code> nothing is printed, so a library that depends on ExBanner never adds a banner to your application.</p>
+      <div class="grid">
+        <div>
+          <p class="label">config/config.exs</p>
+          <pre><code>config :exbanner, otp_app: :my_app</code></pre>
+          <p class="label">priv/banner.txt</p>
+          <pre><code>$[gold] __  __            _
+|  \/  |_   _     / \   _ __  _ __
+| |\/| | | | |   / _ \ | '_ \| '_ \
+| |  | | |_| |  / ___ \| |_) | |_) |
+|_|  |_|\__, | /_/   \_\ .__/| .__/
+        |___/          |_|   |_|$[reset]
+$[dimgray]$app v$version | Elixir $elixir_version | OTP $otp_release$[reset]</code></pre>
+        </div>
+        <div>
+          <p class="label">$ mix run --no-halt</p>
+          <pre class="terminal"><span class="gold"> __  __            _
+|  \/  |_   _     / \   _ __  _ __
+| |\/| | | | |   / _ \ | '_ \| '_ \
+| |  | | |_| |  / ___ \| |_) | |_) |
+|_|  |_|\__, | /_/   \_\ .__/| .__/
+        |___/          |_|   |_|</span>
+<span class="dim">my_app v1.2.0 | Elixir 1.18.3 | OTP 27</span></pre>
+        </div>
+      </div>
+
+      <h3>Placeholders</h3>
+      <p><code>banner.txt</code> is plain text. ExBanner replaces these names, in the same style as <code>Logger</code> formats. Any other <code>$</code> stays as written, so ASCII art full of <code>$$$$</code> is safe.</p>
+      <div class="table">
+        <table>
+          <thead><tr><th>Placeholder</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td><code>$app</code></td><td>The <code>:otp_app</code> name</td></tr>
+            <tr><td><code>$version</code></td><td>Application version</td></tr>
+            <tr><td><code>$description</code></td><td>Application description</td></tr>
+            <tr><td><code>$elixir_version</code></td><td><code>System.version()</code></td></tr>
+            <tr><td><code>$otp_release</code></td><td><code>System.otp_release()</code></td></tr>
+            <tr><td><code>$exbanner_version</code></td><td>ExBanner version</td></tr>
+            <tr><td><code>$node</code></td><td><code>node()</code></td></tr>
+            <tr><td><code>$hostname</code></td><td>Host name</td></tr>
+            <tr><td><code>$release</code></td><td><code>RELEASE_NAME</code>, empty outside a release</td></tr>
+            <tr><td><code>$schedulers</code></td><td><code>System.schedulers_online()</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Add your own values with <code>:vars</code>, and colors from <a href="https://hex.pm/packages/bunt">Bunt</a> with <code>$[red]</code>, <code>$[gold]</code> or <code>$[bright]</code>. Colors are dropped when ANSI is disabled or when the banner goes to <code>Logger</code>.</p>
+
+      <h3>Configuration</h3>
+      <div class="table">
+        <table>
+          <thead><tr><th>Option</th><th>Default</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>:otp_app</code></td><td><code>nil</code></td><td>Application that owns the banner. Required to print anything.</td></tr>
+            <tr><td><code>:location</code></td><td><code>priv/banner.txt</code></td><td>A path, or <code>{:priv, app, "file.txt"}</code>.</td></tr>
+            <tr><td><code>:mode</code></td><td><code>:console</code></td><td><code>:console</code>, <code>:log</code> or <code>:off</code>.</td></tr>
+            <tr><td><code>:mix_tasks</code></td><td><code>:all</code></td><td><code>:all</code>, <code>:none</code>, or task names such as <code>["phx.server", "run"]</code>.</td></tr>
+            <tr><td><code>:vars</code></td><td><code>%{}</code></td><td>Extra placeholders.</td></tr>
+            <tr><td><code>:font_paths</code></td><td><code>[]</code></td><td>Directories with your own <code>.flf</code> fonts.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section container" id="render">
+      <h2>Rendering text</h2>
+      <p>Render any text with a FIGlet font. Long text wraps at word boundaries, like <code>figlet -w</code>. Characters missing from a font lose their accents (<code>ç</code> becomes <code>c</code>) or become <code>?</code>, and are never dropped silently.</p>
+      <pre><code>iex&gt; ExBanner.print("Hello", font: :small)
+ _  _     _ _
+| || |___| | |___
+| __ / -_) | / _ \
+|_||_\___|_|_\___/
+:ok
+
+iex&gt; ExBanner.render("Hi", font: :term)
+{:ok, "Hi\n"}
+
+iex&gt; ExBanner.render("Hi", font: :nope)
+{:error, {:unknown_font, "nope"}}
+
+iex&gt; ExBanner.print("Hello", font: :slant, color: :darkorange)
+
+iex&gt; ExBanner.showcase("Hello", match: "small")
+font: :cybersmall  (1/16)
+...</code></pre>
+      <div class="table">
+        <table>
+          <thead><tr><th>Function</th><th>Returns</th></tr></thead>
+          <tbody>
+            <tr><td><code>render(text, opts)</code></td><td><code>{:ok, string}</code> or <code>{:error, reason}</code></td></tr>
+            <tr><td><code>render!(text, opts)</code></td><td>The string, or raises <code>ExBanner.Error</code></td></tr>
+            <tr><td><code>print(text, opts)</code></td><td><code>:ok</code>, with <code>:color</code> and <code>:device</code> options</td></tr>
+            <tr><td><code>show()</code></td><td>Prints the startup banner on demand</td></tr>
+            <tr><td><code>showcase(text, opts)</code></td><td>Prints the text in every font, page by page, to help choose one</td></tr>
+            <tr><td><code>fonts()</code></td><td>The bundled font names</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section container" id="fonts">
+      <h2>Fonts</h2>
+      <p>Every font below is rendered by ExBanner itself. Each one is credited to its author on the <a href="credits.html">credits page</a>, and any font is removed on request of its author. Use any other <code>.flf</code> or <code>.tlf</code> file by pointing <code>:font_paths</code> to its directory.</p>
+      <div class="filter">
+        <input class="search" id="font-search" type="search" placeholder="Search fonts" aria-label="Search fonts">
+        <span class="count" id="font-count"></span>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <section class="section container" id="security">
+      <h2>Security</h2>
+      <ul class="checks">
+        <li>ExBanner never evaluates code from <code>banner.txt</code> or from font files.</li>
+        <li>Control characters, ANSI escape sequences and Unicode bidirectional overrides are removed from banner files, placeholder values, rendered text and font glyphs.</li>
+        <li>Placeholder values are always a single line, so a hostname or an environment variable cannot fake a log line.</li>
+        <li>Only ExBanner emits ANSI sequences, from a fixed list of colors and styles. Nothing moves the cursor or clears the screen.</li>
+        <li>Font and color names are never converted to atoms.</li>
+        <li>A failure while printing the startup banner is logged as a warning and never stops your application.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>ExBanner is released under the MIT license. Bundled fonts are credited to their authors on the <a href="credits.html">credits page</a>.</span>
+        <span class="footer-links">
+          <a href="https://hexdocs.pm/exbanner">Docs</a>
+          <a href="https://hex.pm/packages/exbanner">Hex</a>
+          <a href="https://github.com/setbox/exbanner-app">GitHub</a>
+          <a href="credits.html">Credits</a>
+          <a href="https://setbox.com.br" target="_blank" rel="noopener">Setbox</a>
+          <a href="mailto:contato@setbox.com.br">Contact</a>
+        </span>
+      </div>
+      <div class="footer-bottom">
+        <a class="endorsement" href="https://setbox.com.br" target="_blank" rel="noopener">A product by <picture><source srcset="assets/images/setbox-lockup-fundo-escuro.svg" media="(prefers-color-scheme: dark)"><img src="assets/images/setbox-lockup.svg" alt="Setbox" width="1284" height="380"></picture></a>
+        <p class="legal">© 2026 Setbox Serviços Digitais · SETBOX INFORMATICA LTDA · CNPJ 08.889.601/0001-09<br>Av. Carneiro Leão, 563 - Zona 01, Maringá / PR - 87014-010</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/scripts/fonts.js"></script>
+  <script src="assets/scripts/application.js"></script>
+</body>
+</html>

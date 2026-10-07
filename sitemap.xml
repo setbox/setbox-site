@@ -28,4 +28,12 @@
     <loc>https://setbox.com.br/sobre.html</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://setbox.com.br/oss/</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://setbox.com.br/oss/exbanner/</loc>
+    <priority>0.6</priority>
+  </url>
 </urlset>
