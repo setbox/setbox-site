@@ -21,6 +21,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://setbox.com.br/produtos/planta-erp/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://setbox.com.br/produtos/planta-erp/concreteiras.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://setbox.com.br/produtos/planta-erp/serrarias.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://setbox.com.br/divisoes.html</loc>
     <priority>0.7</priority>
   </url>
