@@ -31,12 +31,20 @@
   <script>
     tailwind.config = { theme: { extend: { fontFamily: { sans: ['Manrope','system-ui','-apple-system','sans-serif'] } } } }
   </script>
-  <style>body { background-color: #FAFAFA; color: #111111; }</style>
+  <style>
+    body { background-color: #FAFAFA; color: #111111; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #AF0914; outline-offset: 3px; border-radius: 2px; }
+    ::selection { background: #AF0914; color: #FFFFFF; }
+    h1, h2 { text-wrap: balance; }
+    .bloco-vermelho a:focus-visible { outline-color: #FFFFFF; }
+    .lista { list-style: disc; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 24px; color: #555555; }
+    .lista li::marker { color: #AF0914; }
+  </style>
 </head>
 <body class="font-sans antialiased">
 
   <nav class="sticky top-0 z-50 bg-[#FAFAFA] border-b border-[#E5E5E5]">
-    <div class="max-w-5xl mx-auto px-4 md:px-8 h-14 flex items-center justify-between">
+    <div class="max-w-[1120px] mx-auto px-4 md:px-8 h-14 flex items-center justify-between">
       <a href="../index.html"><img src="../assets/setbox-lockup.svg" alt="Setbox" class="h-6 w-auto" width="1284" height="380"></a>
       <div class="flex items-center gap-4 md:gap-7">
         <a href="../produtos/" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Produtos</a>
@@ -50,11 +58,11 @@
             <rect y="15" width="20" height="2" rx="1" fill="#111111"/>
           </svg>
         </button>
-        <a href="mailto:contato@setbox.com.br" class="text-sm bg-[#AF0914] text-white px-4 py-1.5 rounded-[6px] hover:bg-[#8C0710] transition-colors font-medium whitespace-nowrap">Fale conosco</a>
+        <a href="mailto:contato@setbox.com.br" class="text-sm bg-[#AF0914] text-white px-4 py-1.5 rounded-[6px] hover:bg-[#8C0710] transition-colors font-medium whitespace-nowrap">Falar conosco</a>
       </div>
     </div>
     <div id="nav-menu" class="hidden md:hidden border-t border-[#E5E5E5]">
-      <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col">
+      <div class="max-w-[1120px] mx-auto px-4 py-3 flex flex-col">
         <a href="../produtos/" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Produtos</a>
         <a href="../servicos.html" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Serviços</a>
         <a href="../divisoes.html" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Divisões</a>
@@ -65,42 +73,47 @@
 
   <main>
 
-    <section class="bg-[#F7F7F7] border-b border-[#E8E8E8]">
-      <div class="max-w-5xl mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-14 md:pb-20">
-        <div class="max-w-3xl mx-auto text-center">
-          <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-4">Código aberto</p>
-          <h1 class="text-[38px] sm:text-[48px] md:text-[52px] font-extrabold leading-[1.08] tracking-[-0.03em] text-[#111111] mb-6">Open Source</h1>
-          <p class="text-[15px] md:text-[17px] leading-[1.7] text-[#555555]">Ferramentas que a Setbox criou para os próprios projetos e abriu para a comunidade, com código público e licença livre.</p>
-        </div>
+    <section class="border-b border-[rgba(17,17,17,0.08)]">
+      <div class="max-w-[1120px] mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-14 md:pb-20">
+        <h1 class="text-[36px] md:text-[60px] font-medium leading-[1.08] tracking-[-0.03em] text-[#111111] max-w-[920px]">Ferramentas que criamos para os nossos projetos e abrimos para a comunidade</h1>
+        <p class="text-[18px] md:text-[20px] leading-[30px] text-[#555555] max-w-xl mt-6">Código público e licença livre.</p>
       </div>
     </section>
 
-    <section class="py-16 md:py-24 border-b border-[#E5E5E5]">
-      <div class="max-w-5xl mx-auto px-4 md:px-8">
-        <div id="exbanner" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center scroll-mt-20">
-            <div class="border border-[#E5E5E5] rounded-xl bg-[#F2F2F2] p-3">
-              <img src="../assets/oss/exbanner.webp" alt="Página inicial do ExBanner com o nome desenhado em arte ASCII" class="w-full h-auto rounded-lg border border-[#E5E5E5]" width="1200" height="750" loading="lazy">
-            </div>
+    <section>
+      <div class="max-w-[1120px] mx-auto px-4 md:px-8 py-16 md:py-24">
+        <div class="flex flex-col gap-16 md:gap-24">
+        <div id="exbanner" class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center scroll-mt-24">
+          <div class="bg-[#F2F2F2] border border-[#E5E5E5] rounded-xl p-4">
+            <img src="../assets/oss/exbanner.webp" alt="Página inicial do ExBanner com o nome desenhado em arte ASCII" class="block w-full h-auto rounded-[6px]" width="1200" height="750" loading="lazy">
+          </div>
           <div>
-            <img src="exbanner/assets/images/favicon.svg" alt="" class="w-10 h-10 mb-4" width="64" height="64" loading="lazy">
-            <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-2">Biblioteca · Elixir</p>
-            <h2 class="text-[26px] md:text-[30px] font-bold leading-[1.2] tracking-tight text-[#111111] mb-4">ExBanner</h2>
-            <p class="text-[15px] leading-[1.8] text-[#555555] mb-4">Imprime um banner em arte ASCII quando a aplicação sobe, com nome, versão e cores, e desenha qualquer texto com fontes FIGlet. Código aberto sob licença MIT.</p>
-            <p class="text-[14px] leading-[1.7] text-[#333333] bg-[#F2F2F2] rounded-lg px-4 py-2.5 mb-7"><span class="font-semibold">Para quem é:</span> Desenvolvedores Elixir que querem reconhecer a aplicação de relance no terminal e nos logs.</p>
-            <a href="exbanner/" class="inline-block text-[14px] bg-[#AF0914] text-white px-6 py-3 rounded-[6px] hover:bg-[#8C0710] transition-colors font-semibold">Conhecer o ExBanner →</a>
+            <div class="flex items-center gap-3 mb-3">
+              <img src="exbanner/assets/images/favicon.svg" alt="" class="w-8 h-8 object-contain" width="64" height="64" loading="lazy">
+              <p class="text-[14px] leading-[20px] text-[#666666]">Biblioteca Elixir</p>
+            </div>
+            <h2 class="text-[32px] font-medium leading-[1.2] tracking-[-0.02em] text-[#111111] mb-3">ExBanner</h2>
+            <p class="text-[16px] leading-[26px] text-[#555555] mb-4">Imprime um banner em arte ASCII quando a aplicação sobe, com nome, versão e cores, e desenha qualquer texto com fontes FIGlet. Código aberto sob licença MIT.</p>
+            <p class="text-[15px] leading-[24px] text-[#555555] mb-5"><span class="text-[#111111] font-medium">Para quem é:</span> desenvolvedores Elixir que querem reconhecer a aplicação de relance no terminal e nos logs.</p>
+            <a href="exbanner/" class="inline-block text-[15px] font-medium text-[#111111] bg-white border border-[#D4D4D4] px-6 py-[13px] rounded-[6px] hover:border-[#111111] transition-colors">Conhecer o ExBanner</a>
           </div>
         </div>
+        </div>
       </div>
     </section>
 
-    <section class="bg-[#F7F7F7] border-b border-[#E5E5E5]">
-      <div class="max-w-3xl mx-auto px-4 md:px-8 py-16 md:py-24 text-center">
-        <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-3">Fale conosco</p>
-        <h2 class="text-[26px] md:text-[34px] font-bold leading-[1.2] tracking-tight text-[#111111] mb-5">Quer contribuir ou tem uma dúvida?</h2>
-        <p class="text-[15px] md:text-[16px] leading-[1.7] text-[#555555] mb-8 md:mb-10">Fale com a equipe Setbox sobre qualquer projeto desta página.</p>
-        <div class="flex flex-wrap items-center justify-center gap-5">
-          <a href="mailto:contato@setbox.com.br" class="inline-block text-[14px] bg-[#AF0914] text-white px-6 py-3 rounded-[6px] hover:bg-[#8C0710] transition-colors font-semibold">Falar com a equipe →</a>
-          <a href="../produtos/" class="text-[14px] text-[#888888] font-medium hover:text-[#111111] transition-colors">Ver produtos</a>
+    <section class="bloco-vermelho relative overflow-hidden bg-[#FB0D1C] text-white">
+      <svg aria-hidden="true" viewBox="0 0 326 380" class="absolute right-[-72px] bottom-[-148px] h-[660px] w-auto">
+        <path d="M163 0L326 95L163 190L0 95Z" fill="#E10C19"/>
+        <path d="M0 160L163 252L163 380L0 285Z" fill="#D00B18"/>
+        <path d="M163 252L326 160L326 285L163 380Z" fill="#AF0914"/>
+      </svg>
+      <div class="relative max-w-[1120px] mx-auto px-4 md:px-8 py-16 md:py-24">
+        <h2 class="text-[36px] md:text-[64px] font-medium leading-[1.06] tracking-[-0.03em] max-w-[640px] mb-5">Quer contribuir ou tem uma dúvida?</h2>
+        <p class="text-[24px] leading-[34px] max-w-[600px] mb-10">Fale com a equipe Setbox sobre qualquer projeto desta página.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="mailto:contato@setbox.com.br" class="inline-block text-[15px] font-semibold text-[#AF0914] bg-white px-6 py-[14px] rounded-[6px] hover:bg-[#F2F2F2] transition-colors">Falar com a equipe</a>
+          <a href="../produtos/" class="inline-block text-[15px] font-medium text-white bg-[#111111] px-6 py-[14px] rounded-[6px] hover:bg-black transition-colors">Ver produtos</a>
         </div>
       </div>
     </section>
@@ -108,7 +121,7 @@
   </main>
 
   <footer class="bg-[#111111]">
-    <div class="max-w-5xl mx-auto px-4 md:px-8 py-10 md:py-14">
+    <div class="max-w-[1120px] mx-auto px-4 md:px-8 py-10 md:py-14">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div>
           <p class="text-[12px] font-semibold text-white mb-4">Empresa</p>

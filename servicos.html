@@ -33,6 +33,12 @@
   </script>
   <style>
     body { background-color: #FAFAFA; color: #111111; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #AF0914; outline-offset: 3px; border-radius: 2px; }
+    ::selection { background: #AF0914; color: #FFFFFF; }
+    h1, h2 { text-wrap: balance; }
+    .bloco-vermelho a:focus-visible { outline-color: #FFFFFF; }
+    .lista { list-style: disc; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 24px; color: #555555; }
+    .lista li::marker { color: #AF0914; }
     .logo-tech { filter: grayscale(1) opacity(0.4); transition: filter 0.2s, opacity 0.2s; }
     .logo-tech:hover { filter: grayscale(0) opacity(1); }
   </style>
@@ -40,7 +46,7 @@
 <body class="font-sans antialiased">
 
   <nav class="sticky top-0 z-50 bg-[#FAFAFA] border-b border-[#E5E5E5]">
-    <div class="max-w-5xl mx-auto px-4 md:px-8 h-14 flex items-center justify-between">
+    <div class="max-w-[1120px] mx-auto px-4 md:px-8 h-14 flex items-center justify-between">
       <a href="index.html"><img src="assets/setbox-lockup.svg" alt="Setbox" class="h-6 w-auto" width="1284" height="380"></a>
       <div class="flex items-center gap-4 md:gap-7">
         <a href="produtos/" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Produtos</a>
@@ -54,12 +60,12 @@
             <rect y="15" width="20" height="2" rx="1" fill="#111111"/>
           </svg>
         </button>
-        <a href="mailto:contato@setbox.com.br" class="text-sm bg-[#AF0914] text-white px-4 py-1.5 rounded-[6px] hover:bg-[#8C0710] transition-colors font-medium whitespace-nowrap">Fale conosco</a>
+        <a href="mailto:contato@setbox.com.br" class="text-sm bg-[#AF0914] text-white px-4 py-1.5 rounded-[6px] hover:bg-[#8C0710] transition-colors font-medium whitespace-nowrap">Falar conosco</a>
       </div>
     </div>
     <!-- Mobile menu -->
     <div id="nav-menu" class="hidden md:hidden border-t border-[#E5E5E5]">
-      <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col">
+      <div class="max-w-[1120px] mx-auto px-4 py-3 flex flex-col">
         <a href="produtos/" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Produtos</a>
         <a href="servicos.html" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Serviços</a>
         <a href="divisoes.html" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Divisões</a>
@@ -70,176 +76,105 @@
 
   <main>
 
-    <section class="bg-[#F7F7F7] border-b border-[#E8E8E8]">
-      <div class="max-w-4xl mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-14 md:pb-20 text-center">
-        <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-4">Nossos serviços</p>
-        <h1 class="text-[38px] sm:text-[48px] md:text-[52px] font-extrabold leading-[1.08] tracking-[-0.03em] text-[#111111] mb-6">Serviços</h1>
-        <p class="text-[15px] md:text-[17px] leading-[1.7] text-[#555555] max-w-2xl mx-auto">Desenvolvemos software sob medida, em parcerias de longo prazo ou em projetos pontuais.</p>
+    <section class="border-b border-[rgba(17,17,17,0.08)]">
+      <div class="max-w-[1120px] mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-14 md:pb-20">
+        <h1 class="text-[36px] md:text-[60px] font-medium leading-[1.08] tracking-[-0.03em] text-[#111111] max-w-[920px]">Desenvolvemos software sob medida, em parcerias de longo prazo ou em projetos pontuais</h1>
       </div>
     </section>
 
-    <section id="smartsourcing" class="py-16 md:py-24 border-b border-[#E5E5E5]">
-      <div class="max-w-5xl mx-auto px-4 md:px-8">
-        <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-3">Modelo de parceria</p>
-        <h2 class="text-[26px] md:text-[32px] font-bold leading-[1.2] tracking-tight text-[#111111] mb-5">Smartsourcing</h2>
-        <p class="text-[15px] leading-[1.8] text-[#555555] mb-10 max-w-2xl">Uma aliança estratégica entre empresas, onde unem-se esforços e recursos tecnológicos para o desenvolvimento de produtos com qualidade superior. Uma parceria <strong>colaborativa</strong>, focada em atender a individualidade de cada cliente.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
-          <div>
-            <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-3">Objetivo</p>
-            <h3 class="text-[20px] font-bold leading-[1.3] tracking-tight text-[#111111] mb-4">Diminuir custos. Aumentar a excelência</h3>
-            <p class="text-[15px] leading-[1.8] text-[#555555] mb-6">O Smartsourcing tem como objetivo diminuir custos óbvios e aumentar substancialmente a excelência dos processos de negócios, por meio de uma parceria colaborativa e personalizada.</p>
-            <ul class="space-y-3">
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Foco em redução de custos <strong>e</strong> inovação simultânea</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Ajudamos a melhorar os processos internos</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Parceria baseada em confiança, não em burocracia</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Melhoria estratégica, não apenas tática</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Diferencial competitivo, não commodity</span></li>
+    <section id="smartsourcing" class="scroll-mt-14">
+      <div class="max-w-[1120px] mx-auto px-4 md:px-8 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+        <div>
+          <h2 class="text-[28px] md:text-[40px] font-medium leading-[1.15] tracking-[-0.02em] text-[#111111] mb-4">Smartsourcing</h2>
+          <p class="text-[17px] leading-[28px] text-[#555555] max-w-[460px]">Aliança entre empresas que une esforços e recursos para desenvolver produtos com mais qualidade, diminuindo custos.</p>
+        </div>
+        <ul class="lista md:pt-2">
+            <li>Redução de custos e inovação ao mesmo tempo</li>
+            <li>Melhoria dos processos internos</li>
+            <li>Parceria baseada em confiança, não em burocracia</li>
+            <li>Melhoria estratégica, não apenas tática</li>
+            <li>Diferencial competitivo, não commodity</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="consultoria" class="bg-[#F2F2F2] scroll-mt-14">
+      <div class="max-w-[1120px] mx-auto px-4 md:px-8 py-16 md:py-24">
+        <h2 class="text-[28px] md:text-[40px] font-medium leading-[1.15] tracking-[-0.02em] text-[#111111] mb-4">Consultoria</h2>
+        <p class="text-[17px] leading-[28px] text-[#555555] max-w-xl mb-10">Duas frentes, adaptadas ao momento de cada cliente.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white border border-[#E5E5E5] rounded-xl p-6 md:p-8">
+            <h3 class="text-[22px] leading-[30px] font-medium text-[#111111] mb-1">Assessment técnico</h3>
+            <p class="text-[14px] leading-[20px] text-[#666666] mb-5">Para empresas que mantêm seu próprio software</p>
+            <p class="text-[15px] leading-[24px] text-[#555555] mb-6">Você já tem um produto em produção e quer ter certeza de que está usando as melhores práticas. Entregamos informação suficiente para entender o ciclo de vida, os níveis de produtividade e a qualidade do software, com recomendações de como melhorar.</p>
+            <ul class="lista">
+              <li>Análise do ciclo de vida do software</li>
+              <li>Diagnóstico de produtividade e qualidade</li>
+              <li>Recomendações de melhoria</li>
             </ul>
           </div>
-          <div class="border border-[#E5E5E5] rounded-xl bg-white overflow-hidden">
-            <div class="px-6 py-4 border-b border-[#F0F0F0]">
-              <p class="text-[13px] font-semibold text-[#111111]">Smartsourcing vs Outsourcing Tradicional</p>
-            </div>
-            <div class="overflow-x-auto">
-              <table class="w-full text-[13px]">
-                <thead class="bg-[#FAFAFA]">
-                  <tr class="border-b border-[#F0F0F0]">
-                    <th class="text-left text-[#999999] font-medium px-6 py-3">Aspecto</th>
-                    <th class="text-left text-[#AF0914] font-semibold px-4 py-3">Setbox</th>
-                    <th class="text-left text-[#999999] font-medium px-4 py-3">Tradicional</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="border-b border-[#F5F5F5]"><td class="px-6 py-3.5 font-medium text-[#111111]">Foco</td><td class="px-4 py-3.5 text-[#444444]">Custo + inovação</td><td class="px-4 py-3.5 text-[#666666]">Só custo</td></tr>
-                  <tr class="border-b border-[#F5F5F5]"><td class="px-6 py-3.5 font-medium text-[#111111]">Processos</td><td class="px-4 py-3.5 text-[#444444]">Ajudamos a melhorar</td><td class="px-4 py-3.5 text-[#666666]">Precisam ser definidos</td></tr>
-                  <tr class="border-b border-[#F5F5F5]"><td class="px-6 py-3.5 font-medium text-[#111111]">Parceria</td><td class="px-4 py-3.5 text-[#444444]">Baseada em confiança</td><td class="px-4 py-3.5 text-[#666666]">Baseada em burocracia</td></tr>
-                  <tr class="border-b border-[#F5F5F5]"><td class="px-6 py-3.5 font-medium text-[#111111]">Tipo de melhoria</td><td class="px-4 py-3.5 text-[#444444]">Estratégica</td><td class="px-4 py-3.5 text-[#666666]">Tática</td></tr>
-                  <tr><td class="px-6 py-3.5 font-medium text-[#111111]">Posicionamento</td><td class="px-4 py-3.5 text-[#444444]">Diferencial</td><td class="px-4 py-3.5 text-[#666666]">Commodity</td></tr>
-                </tbody>
-              </table>
-            </div>
+          <div class="bg-white border border-[#E5E5E5] rounded-xl p-6 md:p-8">
+            <h3 class="text-[22px] leading-[30px] font-medium text-[#111111] mb-1">Terceirização</h3>
+            <p class="text-[14px] leading-[20px] text-[#666666] mb-5">Para empresas sem time de desenvolvimento interno disponível</p>
+            <p class="text-[15px] leading-[24px] text-[#555555] mb-6">Nosso time fica responsável por todo o desenvolvimento do seu projeto. Fazemos uma estimativa de custo e previsão de data de entrega, implementamos com práticas ágeis e reavaliamos com frequência o que deve ser construído.</p>
+            <ul class="lista">
+              <li>Estimativa de custo e prazo</li>
+              <li>Melhores práticas ágeis</li>
+              <li>Escopo variável e reavaliado continuamente</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="consultoria" class="py-16 md:py-24 bg-[#F7F7F7] border-b border-[#E5E5E5]">
-      <div class="max-w-5xl mx-auto px-4 md:px-8">
-        <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-3">Consultoria técnica</p>
-        <h2 class="text-[26px] md:text-[32px] font-bold leading-[1.2] tracking-tight text-[#111111] mb-4">Consultoria</h2>
-        <p class="text-[15px] text-[#666666] max-w-xl mb-12">Atuamos em duas frentes principais, adaptadas ao momento e contexto de cada cliente.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="border border-[#E5E5E5] rounded-xl bg-white overflow-hidden">
-            <div class="px-6 py-4 border-b border-[#F0F0F0]">
-              <p class="text-[13px] font-semibold text-[#111111]">Assessment técnico</p>
-              <p class="text-[11px] text-[#AAAAAA] mt-0.5">Para empresas que mantêm seu próprio software</p>
-            </div>
-            <div class="px-6 py-5">
-              <p class="text-[14px] leading-[1.75] text-[#555555] mb-4">Você já tem um produto em produção e quer ter certeza de que está usando as melhores práticas.</p>
-              <p class="text-[14px] leading-[1.75] text-[#555555] mb-5">Isso é especialmente útil para entender como são e quais os resultados dos seus processos internos de desenvolvimento de software. A idéia por trás de um assessment técnico é lhe dar informações suficientes para entender o ciclo de vida, níveis de produtividade, níveis de qualidade do software sendo produzido, e recomendações de como melhorar.</p>
-              <ul class="space-y-2.5">
-                <li class="flex gap-3 text-[13px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">✓</span><span>Análise do ciclo de vida do software</span></li>
-                <li class="flex gap-3 text-[13px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">✓</span><span>Diagnóstico de produtividade e qualidade</span></li>
-                <li class="flex gap-3 text-[13px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">✓</span><span>Recomendações de melhoria</span></li>
-              </ul>
-            </div>
+    <section>
+      <div class="max-w-[1120px] mx-auto px-4 md:px-8 py-16 md:py-24">
+        <h2 class="text-[28px] md:text-[40px] font-medium leading-[1.15] tracking-[-0.02em] text-[#111111] mb-10">Tecnologias</h2>
+        <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-8">
+          <div>
+            <dt class="text-[15px] leading-[24px] font-medium text-[#111111] mb-2">Linguagens e frameworks</dt>
+            <dd class="text-[14px] leading-[24px] text-[#555555]">Java, C#, Python, Delphi, Ruby, Elixir, Node.js, Go, TypeScript, Spring Boot, NestJS, Phoenix</dd>
           </div>
-          <div class="border border-[#E5E5E5] rounded-xl bg-white overflow-hidden">
-            <div class="px-6 py-4 border-b border-[#F0F0F0]">
-              <p class="text-[13px] font-semibold text-[#111111]">Terceirização</p>
-              <p class="text-[11px] text-[#AAAAAA] mt-0.5">Para empresas sem time de desenvolvimento interno disponível</p>
-            </div>
-            <div class="px-6 py-5">
-              <p class="text-[14px] leading-[1.75] text-[#555555] mb-4">Nosso time fica responsável por todo o desenvolvimento do seu projeto.</p>
-              <p class="text-[14px] leading-[1.75] text-[#555555] mb-5">Fazemos uma estimativa de custo e previsão de data de entrega e então trabalhamos na implementação utilizando as melhores práticas ágeis. O escopo é variável e nós frequentemente reavaliamos o que deverá ser construído, assim você terá o software que realmente precisa no final do projeto.</p>
-              <ul class="space-y-2.5">
-                <li class="flex gap-3 text-[13px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">✓</span><span>Estimativa de custo e prazo</span></li>
-                <li class="flex gap-3 text-[13px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">✓</span><span>Melhores práticas ágeis</span></li>
-                <li class="flex gap-3 text-[13px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">✓</span><span>Escopo variável e reavaliado continuamente</span></li>
-              </ul>
-            </div>
+          <div>
+            <dt class="text-[15px] leading-[24px] font-medium text-[#111111] mb-2">Interfaces</dt>
+            <dd class="text-[14px] leading-[24px] text-[#555555]">React, Vue.js, Flutter, Tailwind, LiveView</dd>
           </div>
-        </div>
+          <div>
+            <dt class="text-[15px] leading-[24px] font-medium text-[#111111] mb-2">Cloud e infraestrutura</dt>
+            <dd class="text-[14px] leading-[24px] text-[#555555]">AWS, Azure, GCP, Docker, Kubernetes, OpenShift</dd>
+          </div>
+          <div>
+            <dt class="text-[15px] leading-[24px] font-medium text-[#111111] mb-2">Dados, eventos e observabilidade</dt>
+            <dd class="text-[14px] leading-[24px] text-[#555555]">PostgreSQL, Kafka, Elasticsearch, MongoDB, Grafana, Prometheus, IA aplicada</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
-    <section class="py-16 md:py-24 border-b border-[#E5E5E5]">
-      <div class="max-w-5xl mx-auto px-4 md:px-8">
-        <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-3 text-center">Stack</p>
-        <h2 class="text-[26px] md:text-[32px] font-bold leading-[1.2] tracking-tight text-[#111111] mb-4 text-center">Tecnologias</h2>
-        <p class="text-[15px] text-[#666666] text-center max-w-lg mx-auto mb-12">Atuamos nas principais linguagens, frameworks e plataformas de cloud do mercado.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="border border-[#E5E5E5] rounded-xl bg-white overflow-hidden">
-            <div class="px-6 py-4 border-b border-[#F0F0F0]"><p class="text-[13px] font-semibold text-[#111111]">Linguagens &amp; Frameworks</p></div>
-            <div class="px-5 py-8 flex flex-wrap justify-center items-center gap-x-6 gap-y-6">
-              <img src="assets/icones/tecnologias/java.svg" alt="Java" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="291" height="541">
-              <img src="assets/icones/tecnologias/csharp.svg" alt="C#" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="758" height="861">
-              <img src="assets/icones/tecnologias/python.svg" alt="Python" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="110" height="110">
-              <img src="assets/icones/tecnologias/delphi.png" alt="Delphi" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="225" height="225">
-              <img src="assets/icones/tecnologias/ruby.svg" alt="Ruby" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="198" height="198">
-              <img src="assets/icones/tecnologias/elixir.png" alt="Elixir" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="400" height="400">
-              <img src="assets/icones/tecnologias/node.svg" alt="Node.js" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="256" height="282">
-              <img src="assets/icones/tecnologias/go.svg" alt="Go" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="205" height="77">
-              <img src="assets/icones/tecnologias/typescript.svg" alt="TypeScript" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="512" height="512">
-              <img src="assets/icones/tecnologias/spring-boot.svg" alt="Spring Boot" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="510" height="458">
-              <img src="assets/icones/tecnologias/nestjs.svg" alt="NestJS" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="265" height="256">
-              <img src="assets/icones/tecnologias/phoenix.png" alt="Phoenix" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="145" height="99">
-            </div>
-          </div>
-          <div class="border border-[#E5E5E5] rounded-xl bg-white overflow-hidden">
-            <div class="px-6 py-4 border-b border-[#F0F0F0]"><p class="text-[13px] font-semibold text-[#111111]">Interfaces</p></div>
-            <div class="px-5 py-8 flex flex-wrap justify-center items-center gap-x-6 gap-y-6">
-              <img src="assets/icones/tecnologias/react.svg" alt="React" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="23" height="20">
-              <img src="assets/icones/tecnologias/vuejs.svg" alt="Vue.js" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="262" height="227">
-              <img src="assets/icones/tecnologias/flutter.svg" alt="Flutter" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="300" height="371">
-              <img src="assets/icones/tecnologias/tailwind.svg" alt="Tailwind" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="54" height="32">
-              <span class="logo-tech text-[13px] font-medium text-[#111111] border border-[#E5E5E5] rounded-full px-4 py-1.5">LiveView</span>
-            </div>
-          </div>
-          <div class="border border-[#E5E5E5] rounded-xl bg-white overflow-hidden">
-            <div class="px-6 py-4 border-b border-[#F0F0F0]"><p class="text-[13px] font-semibold text-[#111111]">Cloud &amp; Infraestrutura</p></div>
-            <div class="px-5 py-8 flex flex-wrap justify-center items-center gap-x-6 gap-y-6">
-              <img src="assets/icones/tecnologias/aws.svg" alt="AWS" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="305" height="180">
-              <img src="assets/icones/tecnologias/azure.svg" alt="Azure" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="162" height="129">
-              <img src="assets/icones/tecnologias/gcp.svg" alt="GCP" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="2386" height="1920">
-              <img src="assets/icones/tecnologias/docker.png" alt="Docker" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="1316" height="1126">
-              <img src="assets/icones/tecnologias/kubernetes.svg" alt="Kubernetes" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="723" height="702">
-              <img src="assets/icones/tecnologias/openshift.svg" alt="OpenShift" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="76" height="76">
-            </div>
-          </div>
-          <div class="border border-[#E5E5E5] rounded-xl bg-white overflow-hidden">
-            <div class="px-6 py-4 border-b border-[#F0F0F0]"><p class="text-[13px] font-semibold text-[#111111]">Dados, eventos &amp; observabilidade</p></div>
-            <div class="px-5 py-8 flex flex-wrap justify-center items-center gap-x-6 gap-y-6">
-              <img src="assets/icones/tecnologias/postgresql.svg" alt="PostgreSQL" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="512" height="512">
-              <img src="assets/icones/tecnologias/kafka.svg" alt="Kafka" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="256" height="416">
-              <img src="assets/icones/tecnologias/elasticsearch.svg" alt="Elasticsearch" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="256" height="256">
-              <img src="assets/icones/tecnologias/mongodb.svg" alt="MongoDB" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="230" height="512">
-              <img src="assets/icones/tecnologias/grafana.svg" alt="Grafana" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="512" height="512">
-              <img src="assets/icones/tecnologias/prometheus.svg" alt="Prometheus" class="logo-tech h-9 w-auto max-w-[72px] object-contain" loading="lazy" width="512" height="512">
-              <span class="logo-tech text-[13px] font-medium text-[#111111] border border-[#E5E5E5] rounded-full px-4 py-1.5">IA aplicada</span>
-            </div>
-          </div>
+    <section class="bloco-vermelho relative overflow-hidden bg-[#FB0D1C] text-white">
+      <svg aria-hidden="true" viewBox="0 0 326 380" class="absolute right-[-72px] bottom-[-148px] h-[660px] w-auto">
+        <path d="M163 0L326 95L163 190L0 95Z" fill="#E10C19"/>
+        <path d="M0 160L163 252L163 380L0 285Z" fill="#D00B18"/>
+        <path d="M163 252L326 160L326 285L163 380Z" fill="#AF0914"/>
+      </svg>
+      <div class="relative max-w-[1120px] mx-auto px-4 md:px-8 py-16 md:py-24">
+        <h2 class="text-[36px] md:text-[64px] font-medium leading-[1.06] tracking-[-0.03em] max-w-[640px] mb-5">Vamos falar sobre o seu projeto</h2>
+        <p class="text-[24px] leading-[34px] max-w-[600px] mb-10">Nossa equipe é especialista em salvar projetos e elevar a qualidade de times de desenvolvimento.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="mailto:contato@setbox.com.br" class="inline-block text-[15px] font-semibold text-[#AF0914] bg-white px-6 py-[14px] rounded-[6px] hover:bg-[#F2F2F2] transition-colors">Falar com a equipe</a>
+          
         </div>
-      </div>
-    </section>
-
-    <section class="py-16 md:py-24 bg-[#F7F7F7] border-b border-[#E5E5E5]">
-      <div class="max-w-3xl mx-auto px-4 md:px-8 text-center">
-        <h2 class="text-[28px] md:text-[36px] font-bold leading-[1.2] tracking-tight text-[#111111] mb-5">Vamos falar sobre o seu projeto?</h2>
-        <p class="text-[15px] leading-[1.75] text-[#666666] mb-8 max-w-lg mx-auto">Nossa equipe é especialista em salvar projetos e elevar a qualidade de times de desenvolvimento.</p>
-        <div class="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-[13px] text-[#999999] mb-8">
-          <a href="mailto:contato@setbox.com.br" class="hover:text-[#AF0914] transition-colors">contato@setbox.com.br</a>
-          <span class="hidden sm:inline">·</span>
-          <a href="tel:+5541999073688" class="hover:text-[#111111] transition-colors">(41) 99907-3688</a>
+        <div class="mt-8 flex flex-col items-start gap-1 text-[24px] leading-[32px] tabular-nums">
+          <a href="mailto:contato@setbox.com.br" class="hover:opacity-80 transition-opacity">contato@setbox.com.br</a>
+          <a href="tel:+5541999073688" class="hover:opacity-80 transition-opacity">(41) 99907-3688</a>
         </div>
-        <a href="mailto:contato@setbox.com.br" class="inline-block text-[14px] bg-[#AF0914] text-white px-6 py-3 rounded-[6px] hover:bg-[#8C0710] transition-colors font-semibold">Falar com a equipe →</a>
       </div>
     </section>
 
   </main>
 
   <footer class="bg-[#111111]">
-    <div class="max-w-5xl mx-auto px-4 md:px-8 py-10 md:py-14">
+    <div class="max-w-[1120px] mx-auto px-4 md:px-8 py-10 md:py-14">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div>
           <p class="text-[12px] font-semibold text-white mb-4">Empresa</p>

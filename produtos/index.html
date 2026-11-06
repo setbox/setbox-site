@@ -31,12 +31,20 @@
   <script>
     tailwind.config = { theme: { extend: { fontFamily: { sans: ['Manrope','system-ui','-apple-system','sans-serif'] } } } }
   </script>
-  <style>body { background-color: #FAFAFA; color: #111111; }</style>
+  <style>
+    body { background-color: #FAFAFA; color: #111111; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #AF0914; outline-offset: 3px; border-radius: 2px; }
+    ::selection { background: #AF0914; color: #FFFFFF; }
+    h1, h2 { text-wrap: balance; }
+    .bloco-vermelho a:focus-visible { outline-color: #FFFFFF; }
+    .lista { list-style: disc; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 24px; color: #555555; }
+    .lista li::marker { color: #AF0914; }
+  </style>
 </head>
 <body class="font-sans antialiased">
 
   <nav class="sticky top-0 z-50 bg-[#FAFAFA] border-b border-[#E5E5E5]">
-    <div class="max-w-5xl mx-auto px-4 md:px-8 h-14 flex items-center justify-between">
+    <div class="max-w-[1120px] mx-auto px-4 md:px-8 h-14 flex items-center justify-between">
       <a href="../index.html"><img src="../assets/setbox-lockup.svg" alt="Setbox" class="h-6 w-auto" width="1284" height="380"></a>
       <div class="flex items-center gap-4 md:gap-7">
         <a href="./" class="hidden md:block text-sm text-[#AF0914] font-medium">Produtos</a>
@@ -50,12 +58,12 @@
             <rect y="15" width="20" height="2" rx="1" fill="#111111"/>
           </svg>
         </button>
-        <a href="mailto:contato@setbox.com.br" class="text-sm bg-[#AF0914] text-white px-4 py-1.5 rounded-[6px] hover:bg-[#8C0710] transition-colors font-medium whitespace-nowrap">Fale conosco</a>
+        <a href="mailto:contato@setbox.com.br" class="text-sm bg-[#AF0914] text-white px-4 py-1.5 rounded-[6px] hover:bg-[#8C0710] transition-colors font-medium whitespace-nowrap">Falar conosco</a>
       </div>
     </div>
     <!-- Mobile menu -->
     <div id="nav-menu" class="hidden md:hidden border-t border-[#E5E5E5]">
-      <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col">
+      <div class="max-w-[1120px] mx-auto px-4 py-3 flex flex-col">
         <a href="./" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Produtos</a>
         <a href="../servicos.html" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Serviços</a>
         <a href="../divisoes.html" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Divisões</a>
@@ -66,150 +74,154 @@
 
   <main>
 
-    <section class="bg-[#F7F7F7] border-b border-[#E8E8E8]">
-      <div class="max-w-5xl mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-14 md:pb-20">
-        <div class="max-w-3xl mx-auto text-center">
-          <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-4">Produtos Setbox</p>
-          <h1 class="text-[38px] sm:text-[48px] md:text-[52px] font-extrabold leading-[1.08] tracking-[-0.03em] text-[#111111] mb-6">Software que a gente constrói e opera</h1>
-          <p class="text-[15px] md:text-[17px] leading-[1.7] text-[#555555]">Produtos próprios da Setbox, do ERP à ferramenta de desenvolvedor. São a mesma engenharia que levamos para os projetos dos nossos clientes.</p>
+    <section class="border-b border-[rgba(17,17,17,0.08)]">
+      <div class="max-w-[1120px] mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-14 md:pb-20">
+        <h1 class="text-[36px] md:text-[60px] font-medium leading-[1.08] tracking-[-0.03em] text-[#111111] max-w-[920px]">Software que a gente constrói e opera</h1>
+        <p class="text-[18px] md:text-[20px] leading-[30px] text-[#555555] max-w-xl mt-6">Produtos próprios da Setbox, do ERP à ferramenta de desenvolvedor. São a mesma engenharia que levamos para os projetos dos nossos clientes.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="max-w-[1120px] mx-auto px-4 md:px-8 py-16 md:py-24">
+        <h2 class="text-[28px] md:text-[40px] font-medium leading-[1.15] tracking-[-0.02em] text-[#111111] mb-14">Para empresas</h2>
+        <div class="flex flex-col gap-16 md:gap-24">
+        <div id="integra-moda" class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center scroll-mt-24">
+          <div class="bg-[#F2F2F2] border border-[#E5E5E5] rounded-xl p-4">
+            <img src="../assets/produtos/integramoda.webp" alt="Painel do Integra Moda com as integrações entre PLM e ERP" class="block w-full h-auto rounded-[6px]" width="964" height="620" loading="lazy">
+          </div>
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <img src="../assets/produtos/icon-integramoda.webp" alt="" class="w-8 h-8 object-contain" width="192" height="192" loading="lazy">
+              <p class="text-[14px] leading-[20px] text-[#666666]">Integração entre PLM e ERP</p>
+            </div>
+            <h3 class="text-[32px] font-medium leading-[1.2] tracking-[-0.02em] text-[#111111] mb-3">Integra Moda</h3>
+            <p class="text-[16px] leading-[26px] text-[#555555] mb-4">O produto cadastrado no PLM chega ao ERP sem redigitação, e insumos, fornecedores e cores voltam do ERP para o PLM. Tudo campo a campo, sem planilha nem PDF no meio do caminho.</p>
+            <p class="text-[15px] leading-[24px] text-[#555555] mb-5"><span class="text-[#111111] font-medium">Para quem é:</span> confecções e marcas de moda que usam a Coleção Moda e um ERP como TOTVS, Sisplan ou Excia.</p>
+            <ul class="lista mb-7">
+              <li>Duas vias: do PLM ao ERP e do ERP ao PLM</li>
+              <li>Conectores prontos para TOTVS, Sisplan e Excia</li>
+              <li>Em operação em seis clientes TOTVS</li>
+              <li>Painel com o histórico de 90 dias de cada integração</li>
+            </ul>
+            <a href="https://integramoda.com.br" target="_blank" rel="noopener" class="inline-block text-[15px] font-medium text-[#111111] bg-white border border-[#D4D4D4] px-6 py-[13px] rounded-[6px] hover:border-[#111111] transition-colors">Agendar uma conversa</a>
+          </div>
+        </div>
+        <div id="planta-erp" class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center scroll-mt-24">
+          <div class="bg-[#F2F2F2] border border-[#E5E5E5] rounded-xl p-4 md:order-2">
+            <div class="bg-[#296E0B] rounded-lg aspect-[16/10] flex items-center justify-center"><img src="../assets/produtos/planta-lockup-branco.webp" alt="Planta" class="w-[45%] h-auto" width="472" height="120" loading="lazy"></div>
+          </div>
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <img src="../assets/produtos/icon-planta.webp" alt="" class="w-8 h-8 object-contain" width="192" height="192" loading="lazy">
+              <p class="text-[14px] leading-[20px] text-[#666666]">ERP para concreteiras</p>
+            </div>
+            <h3 class="text-[32px] font-medium leading-[1.2] tracking-[-0.02em] text-[#111111] mb-3">Planta ERP</h3>
+            <p class="text-[16px] leading-[26px] text-[#555555] mb-4">Núcleo comum com módulos ligados por empresa. O primeiro vertical atende usinas de concreto da proposta à entrega, com o custo real de cada metro cúbico.</p>
+            <p class="text-[15px] leading-[24px] text-[#555555] mb-5"><span class="text-[#111111] font-medium">Para quem é:</span> concreteiras de porte médio que hoje controlam carga, venda e entrega em planilhas e grupos de mensagem.</p>
+            <ul class="lista mb-7">
+              <li>Orçamento em campo no tablet, com margem em tempo real</li>
+              <li>Cálculo de carga com correção da umidade da areia</li>
+              <li>Programação de entrega dentro da janela do concreto</li>
+              <li>Módulos de produção, frota, balança, logística e fiscal</li>
+            </ul>
+            <a href="https://useplanta.com.br" target="_blank" rel="noopener" class="inline-block text-[15px] font-medium text-[#111111] bg-white border border-[#D4D4D4] px-6 py-[13px] rounded-[6px] hover:border-[#111111] transition-colors">Ver produto</a>
+          </div>
+        </div>
         </div>
       </div>
     </section>
 
-    <section class="py-16 md:py-24 border-b border-[#E5E5E5]">
-      <div class="max-w-5xl mx-auto px-4 md:px-8">
-        <!-- Integra Moda -->
-        <div id="integra-moda" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center scroll-mt-20 mb-16 md:mb-24">
-            <div class="border border-[#E5E5E5] rounded-xl bg-[#F2F2F2] p-3">
-              <img src="../assets/produtos/integramoda.webp" alt="Painel do Integra Moda com as integrações entre PLM e ERP" class="w-full h-auto rounded-lg border border-[#E5E5E5]" width="964" height="620" loading="lazy">
-            </div>
+    <section class="bg-[#F2F2F2]">
+      <div class="max-w-[1120px] mx-auto px-4 md:px-8 py-16 md:py-24">
+        <h2 class="text-[28px] md:text-[40px] font-medium leading-[1.15] tracking-[-0.02em] text-[#111111] mb-14">Para organizar o seu dia</h2>
+        <div class="flex flex-col gap-16 md:gap-24">
+        <div id="jayio" class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center scroll-mt-24">
+          <div class="bg-[#F2F2F2] border border-[#E5E5E5] rounded-xl p-4">
+            <img src="../assets/produtos/jayio.webp" alt="Lista de tarefas de hoje no Jayio" class="block w-full h-auto rounded-[6px]" width="600" height="500" loading="lazy">
+          </div>
           <div>
-            <img src="../assets/produtos/icon-integramoda.webp" alt="" class="w-10 h-10 mb-4" width="192" height="192" loading="lazy">
-            <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-2">Integração PLM · ERP</p>
-            <h3 class="text-[26px] md:text-[30px] font-bold leading-[1.2] tracking-tight text-[#111111] mb-4">Integra Moda</h3>
-            <p class="text-[15px] leading-[1.8] text-[#555555] mb-4">O produto cadastrado no PLM chega ao ERP sem redigitação, e insumos, fornecedores e cores voltam do ERP para o PLM. Tudo campo a campo, sem planilha nem PDF no meio do caminho.</p>
-            <p class="text-[14px] leading-[1.7] text-[#333333] bg-[#F2F2F2] rounded-lg px-4 py-2.5 mb-5"><span class="font-semibold">Para quem é:</span> Confecções e marcas de moda que usam a Coleção Moda e um ERP como TOTVS, Sisplan ou Excia.</p>
-            <ul class="space-y-2.5 mb-7">
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Duas vias: do PLM ao ERP e do ERP ao PLM</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Conectores prontos para TOTVS, Sisplan e Excia</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Em operação em seis clientes TOTVS</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Painel com o histórico de 90 dias de cada integração</span></li>
+            <div class="flex items-center gap-3 mb-3">
+              <img src="../assets/produtos/icon-jayio.webp" alt="" class="w-8 h-8 object-contain" width="192" height="192" loading="lazy">
+              <p class="text-[14px] leading-[20px] text-[#666666]">Tarefas na web</p>
+            </div>
+            <h3 class="text-[32px] font-medium leading-[1.2] tracking-[-0.02em] text-[#111111] mb-3">Jayio</h3>
+            <p class="text-[16px] leading-[26px] text-[#555555] mb-4">À meia-noite a lista de hoje se esvazia: o que ficou pela metade volta à reserva, o que foi feito vai para o histórico e o que estava marcado para amanhã sobe.</p>
+            <p class="text-[15px] leading-[24px] text-[#555555] mb-5"><span class="text-[#111111] font-medium">Para quem é:</span> quem quer foco no dia, no trabalho e na vida pessoal, sem carregar listas que nunca acabam.</p>
+            <ul class="lista mb-7">
+              <li>Virada automática à meia-noite, no fuso de cada pessoa</li>
+              <li>Tarefas pessoais e profissionais separadas por ícone</li>
+              <li>O estado de cada tarefa visível no próprio ícone</li>
+              <li>Em português e inglês</li>
             </ul>
-            <a href="https://integramoda.com.br" target="_blank" rel="noopener" class="inline-block text-[14px] bg-[#AF0914] text-white px-6 py-3 rounded-[6px] hover:bg-[#8C0710] transition-colors font-semibold">Agendar uma conversa →</a>
+            <a href="https://jayio.app" target="_blank" rel="noopener" class="inline-block text-[15px] font-medium text-[#111111] bg-white border border-[#D4D4D4] px-6 py-[13px] rounded-[6px] hover:border-[#111111] transition-colors">Acessar jayio.app</a>
           </div>
         </div>
-
-        <!-- Planta ERP -->
-        <div id="planta-erp" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center scroll-mt-20">
-            <div class="rounded-xl bg-[#296E0B] aspect-[16/10] flex items-center justify-center md:order-2">
-              <img src="../assets/produtos/planta-lockup-branco.webp" alt="Planta" class="h-12 md:h-14 w-auto" width="472" height="120" loading="lazy">
-            </div>
-          <div>
-            <img src="../assets/produtos/icon-planta.webp" alt="" class="w-10 h-10 mb-4" width="192" height="192" loading="lazy">
-            <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-2">ERP · Concreteiras</p>
-            <h3 class="text-[26px] md:text-[30px] font-bold leading-[1.2] tracking-tight text-[#111111] mb-4">Planta ERP</h3>
-            <p class="text-[15px] leading-[1.8] text-[#555555] mb-4">Núcleo comum com módulos ligados por empresa. O primeiro vertical atende usinas de concreto da proposta à entrega, com o custo real de cada metro cúbico.</p>
-            <p class="text-[14px] leading-[1.7] text-[#333333] bg-[#F2F2F2] rounded-lg px-4 py-2.5 mb-5"><span class="font-semibold">Para quem é:</span> Concreteiras de porte médio que hoje controlam carga, venda e entrega em planilhas e grupos de mensagem.</p>
-            <ul class="space-y-2.5 mb-7">
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Orçamento em campo no tablet, com margem em tempo real</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Cálculo de carga com correção da umidade da areia</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Programação de entrega dentro da janela do concreto</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Módulos de produção, frota, balança, logística e fiscal</span></li>
-            </ul>
-            <a href="https://useplanta.com.br" target="_blank" rel="noopener" class="inline-block text-[14px] bg-[#AF0914] text-white px-6 py-3 rounded-[6px] hover:bg-[#8C0710] transition-colors font-semibold">Ver produto →</a>
-          </div>
         </div>
-
       </div>
     </section>
 
-    <section class="py-16 md:py-24 border-b border-[#E5E5E5]">
-      <div class="max-w-5xl mx-auto px-4 md:px-8">
-        <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-3">Produtividade</p>
-        <h2 class="text-[26px] md:text-[32px] font-bold leading-[1.2] tracking-tight text-[#111111] mb-10 md:mb-14">Para organizar o seu dia</h2>
-
-        <!-- Jayio -->
-        <div id="jayio" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center scroll-mt-20">
-            <div class="border border-[#E5E5E5] rounded-xl bg-[#F2F2F2] p-3">
-              <img src="../assets/produtos/jayio.webp" alt="Lista de tarefas de hoje no Jayio" class="w-full h-auto rounded-lg border border-[#E5E5E5]" width="600" height="500" loading="lazy">
-            </div>
+    <section>
+      <div class="max-w-[1120px] mx-auto px-4 md:px-8 py-16 md:py-24">
+        <h2 class="text-[28px] md:text-[40px] font-medium leading-[1.15] tracking-[-0.02em] text-[#111111] mb-14">Ferramentas de quem escreve software</h2>
+        <div class="flex flex-col gap-16 md:gap-24">
+        <div id="redoc" class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center scroll-mt-24">
+          <div class="bg-[#F2F2F2] border border-[#E5E5E5] rounded-xl p-4">
+            <img src="../assets/produtos/redoc.webp" alt="Editor do ReDoc com a árvore de páginas e o documento aberto" class="block w-full h-auto rounded-[6px]" width="1200" height="884" loading="lazy">
+          </div>
           <div>
-            <img src="../assets/produtos/icon-jayio.webp" alt="" class="w-10 h-10 mb-4" width="192" height="192" loading="lazy">
-            <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-2">Tarefas · Web</p>
-            <h3 class="text-[26px] md:text-[30px] font-bold leading-[1.2] tracking-tight text-[#111111] mb-4">Jayio</h3>
-            <p class="text-[15px] leading-[1.8] text-[#555555] mb-4">À meia-noite a lista de hoje se esvazia: o que ficou pela metade volta à reserva, o que foi feito vai para o histórico e o que estava marcado para amanhã sobe.</p>
-            <p class="text-[14px] leading-[1.7] text-[#333333] bg-[#F2F2F2] rounded-lg px-4 py-2.5 mb-5"><span class="font-semibold">Para quem é:</span> Quem quer foco no dia, no trabalho e na vida pessoal, sem carregar listas que nunca acabam.</p>
-            <ul class="space-y-2.5 mb-7">
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Virada automática à meia-noite, no fuso de cada pessoa</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Tarefas pessoais e profissionais separadas por ícone</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>O estado de cada tarefa visível no próprio ícone</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Em português e inglês</span></li>
+            <div class="flex items-center gap-3 mb-3">
+              <img src="../assets/produtos/icon-redoc.webp" alt="" class="w-8 h-8 object-contain" width="192" height="192" loading="lazy">
+              <p class="text-[14px] leading-[20px] text-[#666666]">Documentação no desktop</p>
+            </div>
+            <h3 class="text-[32px] font-medium leading-[1.2] tracking-[-0.02em] text-[#111111] mb-3">ReDoc</h3>
+            <p class="text-[16px] leading-[26px] text-[#555555] mb-4">Abre pastas Markdown ou pacotes .redoc sem servidor, banco de dados ou configuração. A documentação fica em texto puro, versionada no Git.</p>
+            <p class="text-[15px] leading-[24px] text-[#555555] mb-5"><span class="text-[#111111] font-medium">Para quem é:</span> equipes que mantêm documentação técnica em Markdown e querem ler e editar sem depender de nuvem.</p>
+            <ul class="lista mb-7">
+              <li>Diagramas Mermaid, avisos, notas de rodapé e variáveis</li>
+              <li>Busca global com filtros por tag e diretório</li>
+              <li>Validação de links quebrados e páginas órfãs</li>
+              <li>macOS, Windows e Linux</li>
             </ul>
-            <a href="https://jayio.app" target="_blank" rel="noopener" class="inline-block text-[14px] bg-[#AF0914] text-white px-6 py-3 rounded-[6px] hover:bg-[#8C0710] transition-colors font-semibold">Acessar jayio.app →</a>
+            <a href="redoc/" class="inline-block text-[15px] font-medium text-[#111111] bg-white border border-[#D4D4D4] px-6 py-[13px] rounded-[6px] hover:border-[#111111] transition-colors">Ver produto</a>
           </div>
         </div>
-
+        <div id="loupe" class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center scroll-mt-24">
+          <div class="bg-[#F2F2F2] border border-[#E5E5E5] rounded-xl p-4 md:order-2">
+            <img src="../assets/produtos/loupe.webp" alt="Loupe com o editor e a árvore de um arquivo JSON" class="block w-full h-auto rounded-[6px]" width="452" height="376" loading="lazy">
+          </div>
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <img src="../assets/produtos/icon-loupe.webp" alt="" class="w-8 h-8 object-contain" width="192" height="192" loading="lazy">
+              <p class="text-[14px] leading-[20px] text-[#666666]">Dados estruturados no desktop</p>
+            </div>
+            <h3 class="text-[32px] font-medium leading-[1.2] tracking-[-0.02em] text-[#111111] mb-3">Loupe</h3>
+            <p class="text-[16px] leading-[26px] text-[#555555] mb-4">Editor e árvore navegável sincronizados, busca JSONPath e validação a cada tecla. Tudo na sua máquina: o arquivo não sai do disco.</p>
+            <p class="text-[15px] leading-[24px] text-[#555555] mb-5"><span class="text-[#111111] font-medium">Para quem é:</span> desenvolvedores que vivem abrindo respostas de API, logs e arquivos de configuração.</p>
+            <ul class="lista mb-7">
+              <li>JSON, YAML, TOML, XML, CSV, logfmt e mais</li>
+              <li>Árvore virtualizada para arquivos enormes</li>
+              <li>Busca JSONPath e erro apontado na linha exata</li>
+              <li>macOS, gratuito e de código aberto</li>
+            </ul>
+            <a href="loupe/" class="inline-block text-[15px] font-medium text-[#111111] bg-white border border-[#D4D4D4] px-6 py-[13px] rounded-[6px] hover:border-[#111111] transition-colors">Baixar Loupe</a>
+          </div>
+        </div>
+        </div>
       </div>
     </section>
 
-    <section class="py-16 md:py-24 border-b border-[#E5E5E5]">
-      <div class="max-w-5xl mx-auto px-4 md:px-8">
-        <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-3">Para desenvolvedores</p>
-        <h2 class="text-[26px] md:text-[32px] font-bold leading-[1.2] tracking-tight text-[#111111] mb-10 md:mb-14">Ferramentas de quem escreve software</h2>
-
-        <!-- ReDoc -->
-        <div id="redoc" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center scroll-mt-20 mb-16 md:mb-24">
-            <div class="border border-[#E5E5E5] rounded-xl bg-[#F2F2F2] p-3 md:order-2">
-              <img src="../assets/produtos/redoc.webp" alt="Editor do ReDoc com a árvore de páginas e o documento aberto" class="w-full h-auto rounded-lg border border-[#E5E5E5]" width="1200" height="884" loading="lazy">
-            </div>
-          <div>
-            <img src="../assets/produtos/icon-redoc.webp" alt="" class="w-10 h-10 mb-4" width="192" height="192" loading="lazy">
-            <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-2">Documentação · Desktop</p>
-            <h3 class="text-[26px] md:text-[30px] font-bold leading-[1.2] tracking-tight text-[#111111] mb-4">ReDoc</h3>
-            <p class="text-[15px] leading-[1.8] text-[#555555] mb-4">Abre pastas Markdown ou pacotes .redoc sem servidor, banco de dados ou configuração. A documentação fica em texto puro, versionada no Git.</p>
-            <p class="text-[14px] leading-[1.7] text-[#333333] bg-[#F2F2F2] rounded-lg px-4 py-2.5 mb-5"><span class="font-semibold">Para quem é:</span> Equipes que mantêm documentação técnica em Markdown e querem ler e editar sem depender de nuvem.</p>
-            <ul class="space-y-2.5 mb-7">
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Diagramas Mermaid, avisos, notas de rodapé e variáveis</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Busca global com filtros por tag e diretório</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Validação de links quebrados e páginas órfãs</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>macOS, Windows e Linux</span></li>
-            </ul>
-            <a href="redoc/" class="inline-block text-[14px] bg-[#AF0914] text-white px-6 py-3 rounded-[6px] hover:bg-[#8C0710] transition-colors font-semibold">Ver produto →</a>
-          </div>
-        </div>
-
-        <!-- Loupe -->
-        <div id="loupe" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center scroll-mt-20">
-            <div class="border border-[#E5E5E5] rounded-xl bg-[#F2F2F2] p-3">
-              <img src="../assets/produtos/loupe.webp" alt="Loupe com o editor e a árvore de um arquivo JSON" class="w-full h-auto rounded-lg border border-[#E5E5E5]" width="452" height="376" loading="lazy">
-            </div>
-          <div>
-            <img src="../assets/produtos/icon-loupe.webp" alt="" class="w-10 h-10 mb-4" width="192" height="192" loading="lazy">
-            <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-2">Dados estruturados · Desktop</p>
-            <h3 class="text-[26px] md:text-[30px] font-bold leading-[1.2] tracking-tight text-[#111111] mb-4">Loupe</h3>
-            <p class="text-[15px] leading-[1.8] text-[#555555] mb-4">Editor e árvore navegável sincronizados, busca JSONPath e validação a cada tecla. Tudo na sua máquina: o arquivo não sai do disco.</p>
-            <p class="text-[14px] leading-[1.7] text-[#333333] bg-[#F2F2F2] rounded-lg px-4 py-2.5 mb-5"><span class="font-semibold">Para quem é:</span> Desenvolvedores que vivem abrindo respostas de API, logs e arquivos de configuração.</p>
-            <ul class="space-y-2.5 mb-7">
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>JSON, YAML, TOML, XML, CSV, logfmt e mais</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Árvore virtualizada para arquivos enormes</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>Busca JSONPath e erro apontado na linha exata</span></li>
-              <li class="flex gap-3 text-[14px] text-[#444444]"><span class="text-[#AF0914] flex-shrink-0 font-bold">→</span><span>macOS, gratuito e de código aberto</span></li>
-            </ul>
-            <a href="loupe/" class="inline-block text-[14px] bg-[#AF0914] text-white px-6 py-3 rounded-[6px] hover:bg-[#8C0710] transition-colors font-semibold">Baixar Loupe →</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="bg-[#F7F7F7] border-b border-[#E5E5E5]">
-      <div class="max-w-3xl mx-auto px-4 md:px-8 py-16 md:py-24 text-center">
-        <p class="text-[11px] text-[#AF0914] font-semibold tracking-wide uppercase mb-3">Serviços</p>
-        <h2 class="text-[26px] md:text-[34px] font-bold leading-[1.2] tracking-tight text-[#111111] mb-5">Tem uma ideia de produto?</h2>
-        <p class="text-[15px] md:text-[16px] leading-[1.7] text-[#555555] mb-8 md:mb-10">A mesma equipe que construiu esses produtos desenvolve o seu, do desenho à operação.</p>
-        <div class="flex flex-wrap items-center justify-center gap-5">
-          <a href="mailto:contato@setbox.com.br" class="inline-block text-[14px] bg-[#AF0914] text-white px-6 py-3 rounded-[6px] hover:bg-[#8C0710] transition-colors font-semibold">Falar com a equipe →</a>
-          <a href="../servicos.html" class="text-[14px] text-[#888888] font-medium hover:text-[#111111] transition-colors">Ver serviços</a>
+    <section class="bloco-vermelho relative overflow-hidden bg-[#FB0D1C] text-white">
+      <svg aria-hidden="true" viewBox="0 0 326 380" class="absolute right-[-72px] bottom-[-148px] h-[660px] w-auto">
+        <path d="M163 0L326 95L163 190L0 95Z" fill="#E10C19"/>
+        <path d="M0 160L163 252L163 380L0 285Z" fill="#D00B18"/>
+        <path d="M163 252L326 160L326 285L163 380Z" fill="#AF0914"/>
+      </svg>
+      <div class="relative max-w-[1120px] mx-auto px-4 md:px-8 py-16 md:py-24">
+        <h2 class="text-[36px] md:text-[64px] font-medium leading-[1.06] tracking-[-0.03em] max-w-[640px] mb-5">Tem uma ideia de produto?</h2>
+        <p class="text-[24px] leading-[34px] max-w-[600px] mb-10">A mesma equipe que construiu esses produtos desenvolve o seu, do desenho à operação.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="mailto:contato@setbox.com.br" class="inline-block text-[15px] font-semibold text-[#AF0914] bg-white px-6 py-[14px] rounded-[6px] hover:bg-[#F2F2F2] transition-colors">Falar com a equipe</a>
+          <a href="../servicos.html" class="inline-block text-[15px] font-medium text-white bg-[#111111] px-6 py-[14px] rounded-[6px] hover:bg-black transition-colors">Ver serviços</a>
         </div>
       </div>
     </section>
@@ -217,7 +229,7 @@
   </main>
 
   <footer class="bg-[#111111]">
-    <div class="max-w-5xl mx-auto px-4 md:px-8 py-10 md:py-14">
+    <div class="max-w-[1120px] mx-auto px-4 md:px-8 py-10 md:py-14">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div>
           <p class="text-[12px] font-semibold text-white mb-4">Empresa</p>
