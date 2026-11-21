@@ -36,4 +36,16 @@
     <loc>https://setbox.com.br/oss/exbanner/</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://setbox.com.br/privacidade/</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://setbox.com.br/termos/</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://setbox.com.br/exclusao-de-dados/</loc>
+    <priority>0.3</priority>
+  </url>
 </urlset>

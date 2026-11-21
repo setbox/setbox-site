@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Como pedir à Setbox a exclusão dos dados guardados quando você comenta ou troca mensagens com uma conta de Instagram das suas marcas.">
+  <link rel="canonical" href="https://setbox.com.br/exclusao-de-dados/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Setbox Serviços Digitais">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://setbox.com.br/exclusao-de-dados/">
+  <meta property="og:title" content="Exclusão de dados - Setbox Serviços Digitais">
+  <meta property="og:description" content="Como pedir à Setbox a exclusão dos dados guardados quando você comenta ou troca mensagens com uma conta de Instagram das suas marcas.">
+  <meta property="og:image" content="https://setbox.com.br/assets/og-image.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exclusão de dados - Setbox Serviços Digitais">
+  <meta name="twitter:description" content="Como pedir à Setbox a exclusão dos dados guardados quando você comenta ou troca mensagens com uma conta de Instagram das suas marcas.">
+  <title>Exclusão de dados - Setbox Serviços Digitais</title>
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../assets/site.webmanifest">
+  <meta name="theme-color" content="#FB0D1C">
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Manrope','system-ui','-apple-system','sans-serif'] } } } }
+  </script>
+  <style>
+    body { background-color: #FAFAFA; color: #111111; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #AF0914; outline-offset: 3px; border-radius: 2px; }
+    ::selection { background: #AF0914; color: #FFFFFF; }
+    h1, h2 { text-wrap: balance; }
+    .lista { list-style: disc; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 24px; color: #555555; }
+    .lista li::marker { color: #AF0914; }
+    .texto h2 { font-size: 24px; line-height: 32px; font-weight: 500; letter-spacing: -0.01em; color: #111111; margin-top: 48px; margin-bottom: 16px; }
+    .texto h3 { font-size: 17px; line-height: 26px; font-weight: 500; color: #111111; margin-top: 24px; margin-bottom: 8px; }
+    .texto p { font-size: 15px; line-height: 26px; color: #555555; margin-bottom: 12px; }
+    .texto .lista { margin-bottom: 12px; }
+    .texto strong { font-weight: 500; color: #111111; }
+  </style>
+</head>
+<body class="font-sans antialiased">
+
+  <nav class="sticky top-0 z-50 bg-[#FAFAFA] border-b border-[#E5E5E5]">
+    <div class="max-w-[1120px] mx-auto px-4 md:px-8 h-14 flex items-center justify-between">
+      <a href="../index.html"><img src="../assets/setbox-lockup.svg" alt="Setbox" class="h-6 w-auto" width="1284" height="380"></a>
+      <div class="flex items-center gap-4 md:gap-7">
+        <a href="../produtos/" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Produtos</a>
+        <a href="../servicos.html" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Serviços</a>
+        <a href="../divisoes.html" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Divisões</a>
+        <a href="../sobre.html" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Sobre</a>
+        <button id="nav-toggle" class="md:hidden p-1" aria-label="Abrir menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect y="3" width="20" height="2" rx="1" fill="#111111"/>
+            <rect y="9" width="20" height="2" rx="1" fill="#111111"/>
+            <rect y="15" width="20" height="2" rx="1" fill="#111111"/>
+          </svg>
+        </button>
+        <a href="mailto:contato@setbox.com.br" class="text-sm bg-[#AF0914] text-white px-4 py-1.5 rounded-[6px] hover:bg-[#8C0710] transition-colors font-medium whitespace-nowrap">Falar conosco</a>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="nav-menu" class="hidden md:hidden border-t border-[#E5E5E5]">
+      <div class="max-w-[1120px] mx-auto px-4 py-3 flex flex-col">
+        <a href="../produtos/" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Produtos</a>
+        <a href="../servicos.html" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Serviços</a>
+        <a href="../divisoes.html" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Divisões</a>
+        <a href="../sobre.html" class="text-sm text-[#111111] py-2.5 hover:opacity-50 transition-opacity">Sobre</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="border-b border-[rgba(17,17,17,0.08)]">
+      <div class="max-w-[1120px] mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-14 md:pb-20">
+        <h1 class="text-[36px] md:text-[60px] font-medium leading-[1.08] tracking-[-0.03em] text-[#111111] max-w-[920px]">Como pedir a exclusão dos seus dados</h1>
+        <p class="text-[18px] md:text-[20px] leading-[30px] text-[#555555] max-w-xl mt-6">Um e-mail basta para apagarmos o que a Grade guarda sobre a sua conta de Instagram.</p>
+        <p class="text-[13px] leading-[20px] text-[#888888] mt-6">Última atualização: 21 de novembro de 2026</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="max-w-[1120px] mx-auto px-4 md:px-8 py-16 md:py-24">
+        <div class="texto max-w-[720px]">
+          <p>A Setbox guarda alguns dados quando você comenta uma palavra-chave ou troca mensagens com uma conta de Instagram de uma marca da Setbox, como a PJ Park. Eles estão descritos na <a href="../privacidade/" class="text-[#AF0914] underline underline-offset-[3px] hover:text-[#8C0710] transition-colors">Política de privacidade</a>. Você pode pedir a exclusão a qualquer momento, sem custo.</p>
+
+          <h2>Como pedir</h2>
+          <ul class="lista">
+            <li>Envie um e-mail para <a href="mailto:contato@setbox.com.br" class="text-[#AF0914] underline underline-offset-[3px] hover:text-[#8C0710] transition-colors">contato@setbox.com.br</a> com o assunto <strong>Exclusão de dados</strong>.</li>
+            <li>Informe o seu nome de usuário no Instagram e, se lembrar, a conta da marca com que você interagiu.</li>
+            <li>Se preferir, envie o pedido por mensagem direta à própria conta da marca no Instagram.</li>
+          </ul>
+
+          <h2>O que acontece depois</h2>
+          <p>Confirmamos o recebimento e excluímos, em até 15 dias, os comentários, o identificador da sua conta, o seu nome de usuário e o registro das mensagens ligados a você na Grade. Respondemos quando a exclusão for concluída.</p>
+          <p>Números agregados de desempenho das publicações não identificam pessoas e continuam guardados. Se a lei exigir que algum registro seja mantido por mais tempo, avisamos qual e por quanto tempo.</p>
+
+          <h2>O que fica com a Meta</h2>
+          <p>Comentários e mensagens também ficam no próprio Instagram. Para apagá-los lá, exclua o comentário na publicação ou a conversa no Direct. Isso segue a política de privacidade do Instagram.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-[#111111]">
+    <div class="max-w-[1120px] mx-auto px-4 md:px-8 py-10 md:py-14">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+          <p class="text-[12px] font-semibold text-white mb-4">Empresa</p>
+          <ul class="space-y-2.5">
+            <li><a href="../sobre.html#empregos" class="text-[12px] text-[#AAAAAA] hover:text-white transition-colors">Empregos</a></li>
+            <li><a href="../oss/" class="text-[12px] text-[#AAAAAA] hover:text-white transition-colors">Open Source</a></li>
+            <li><a href="http://www.bytecoracao.ong.br" target="_blank" class="text-[12px] text-[#AAAAAA] hover:text-white transition-colors">Byte Coração</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-[12px] font-semibold text-white mb-4">Legal</p>
+          <ul class="space-y-2.5">
+            <li><a href="../privacidade/" class="text-[12px] text-[#AAAAAA] hover:text-white transition-colors">Privacidade</a></li>
+            <li><a href="../termos/" class="text-[12px] text-[#AAAAAA] hover:text-white transition-colors">Termos de uso</a></li>
+            <li><a href="../exclusao-de-dados/" class="text-[12px] text-[#AAAAAA] hover:text-white transition-colors">Exclusão de dados</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-10 pt-6 border-t border-[#2A2A2A] flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <img src="../assets/setbox-lockup-escuro.svg" alt="Setbox" class="h-6 w-auto self-start md:self-auto" width="1284" height="380">
+        <p class="text-[12px] leading-[1.7] text-[#888888] md:text-right">© 2026 Setbox Serviços Digitais · SETBOX INFORMATICA LTDA · CNPJ 08.889.601/0001-09<br>Av. Carneiro Leão, 563 - Zona 01, Maringá / PR</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('nav-toggle').addEventListener('click', function() {
+      var menu = document.getElementById('nav-menu');
+      menu.classList.toggle('hidden');
+      this.setAttribute('aria-expanded', String(!menu.classList.contains('hidden')));
+    });
+  </script>
+</body>
+</html>
